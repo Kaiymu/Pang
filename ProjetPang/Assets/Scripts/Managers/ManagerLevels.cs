@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ManagerLevels : MonoBehaviour {
+public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 
 	public string ListLevelSceneName;
 
 	private float currentLevel;
 	// Use this for initialization
+
+	void Update()
+	{
+		GoToMainMenu();
+	}
 
 	void GoToMainMenu()
 	{
@@ -17,6 +22,7 @@ public class ManagerLevels : MonoBehaviour {
 	// Used in the main menu to go to the level list
 	void GoToListLevels()
 	{
+		Debug.Log("toto");
 		Time.timeScale = 1;
 		Application.LoadLevel(ListLevelSceneName);
 	}

@@ -1,23 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OrbTestMovement : MonoBehaviour {
+public abstract class LegacyOrbMovement : MonoBehaviour {
 
 	public float boucinessY;
 	public float boucinessX;
+	
+	public float startBouciness;
 
-	void OnEnable () {
-		rigidbody2D.AddForce(new Vector2(boucinessX, 0));
+	protected virtual void OnEnable () {
+		rigidbody2D.AddForce(new Vector2(startBouciness, 0));
 	}
 	
-	public void MovementWall(string nameWall)
+	public virtual void MovementWall(string nameWall)
 	{
 		if(nameWall == "2_LeftWall")
 			rigidbody2D.AddForce(new Vector2(-boucinessX, 0));
-
+		
 		if(nameWall == "3_RightWall")
 			rigidbody2D.AddForce(new Vector2(boucinessX, 0));
-
+		
 		if(nameWall == "1_BottomWall")
 			rigidbody2D.AddForce(new Vector2(0, boucinessY));
 	}

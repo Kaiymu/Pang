@@ -64,58 +64,75 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 						int randomNumber = Random.Range(0, _listOrb.Count);
 						randomOrb = _listOrb[randomNumber];
 
-						if(sizeOrb == OrbSize.Size.normalSize)
-						{
-							randomOrb.transform.position = currentOrb.transform.position;
-							randomOrb.transform.rotation = Quaternion.identity;
-							randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.midSize;
-							randomOrb.SetActive(true);
-							break;
-						}
-					}
-				}
-			}
-	}
+						randomOrb.transform.position = currentOrb.transform.position;
+						randomOrb.transform.rotation = Quaternion.identity;
 
-	/*
-	void instantiateOrbs(int number, GameObject col)
-	{
-		OrbSize.Size sizeOrb = col.GetComponent<OrbSize>().sizeOrb;
-		
-		// If the ball is really small or if it's a ice ball, we destroy it.
-		if(sizeOrb == OrbSize.Size.smallSize)
-			return;
-		else
-		{
-			for(int i = 0; i < number; i++)
-			{
-				for(int j = 0; j < _arrayOrb.Count; j++)
-				{
-					GameObject randomOrb = _arrayOrb[Random.Range(0, _arrayOrb.Count)];
-					
-					if(!randomOrb.activeInHierarchy)
-					{
-						if(sizeOrb == OrbSize.Size.normalSize) // If it's normal, we instantiate a mid ball.
+						if(i == 0)
 						{
-							randomOrb.transform.position = this.transform.position;
-							randomOrb.transform.rotation = Quaternion.identity;
-							randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.midSize;
-							randomOrb.SetActive(true);
-							break;
-						}	
-						
-						if(sizeOrb == OrbSize.Size.midSize) // If it's mid, we instantiate a small ball.
+							if(sizeOrb == OrbSize.Size.bigSize)
+							{
+								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.normalSize;
+								randomOrb.GetComponent<OrbMovement>().boucinessY = 220;
+								randomOrb.GetComponent<OrbMovement>().boucinessX = 110;
+								randomOrb.GetComponent<OrbMovement>().startBouciness = 110;
+								randomOrb.SetActive(true);
+								break;
+							}
+
+							if(sizeOrb == OrbSize.Size.normalSize)
+							{
+								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.midSize;
+								randomOrb.GetComponent<OrbMovement>().boucinessY = 180;
+								randomOrb.GetComponent<OrbMovement>().boucinessX = 90; 
+								randomOrb.GetComponent<OrbMovement>().startBouciness = 90;
+								randomOrb.SetActive(true);
+								break;
+							}
+
+							if(sizeOrb == OrbSize.Size.midSize)
+							{
+								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.smallSize;
+								randomOrb.GetComponent<OrbMovement>().boucinessY = 150;
+								randomOrb.GetComponent<OrbMovement>().boucinessX = 75;
+								randomOrb.GetComponent<OrbMovement>().startBouciness = 75;
+								randomOrb.SetActive(true);
+								break;
+							}
+						}
+						if(i == 1)
 						{
-							randomOrb.transform.position = this.transform.position;
-							randomOrb.transform.rotation = Quaternion.identity;
-							randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.smallSize;
-							randomOrb.SetActive(true);
-							break;
+							if(sizeOrb == OrbSize.Size.bigSize)
+							{
+								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.normalSize;
+								randomOrb.GetComponent<OrbMovement>().boucinessY = 220;
+								randomOrb.GetComponent<OrbMovement>().boucinessX = 110; 
+								randomOrb.GetComponent<OrbMovement>().startBouciness = -110;
+								randomOrb.SetActive(true);
+								break;
+							}
+
+							if(sizeOrb == OrbSize.Size.normalSize)
+							{
+								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.midSize;
+								randomOrb.GetComponent<OrbMovement>().boucinessY = 180;
+								randomOrb.GetComponent<OrbMovement>().boucinessX = 90; 
+								randomOrb.GetComponent<OrbMovement>().startBouciness = -90; 
+								randomOrb.SetActive(true);
+								break;
+							}
+
+							if(sizeOrb == OrbSize.Size.midSize)
+							{
+								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.smallSize;
+								randomOrb.GetComponent<OrbMovement>().boucinessY = 150;
+								randomOrb.GetComponent<OrbMovement>().boucinessX = 75; 
+								randomOrb.GetComponent<OrbMovement>().startBouciness = -75; 
+								randomOrb.SetActive(true);
+								break;
+							}
 						}
 					}
 				}
 			}
-		}
 	}
-*/
 }

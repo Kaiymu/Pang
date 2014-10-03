@@ -5,7 +5,7 @@ public class ManagerInput : SingleBehaviour<ManagerInput> {
 	
 	// Keep all the gesture of the game. Really easy if i want to add other key, or a pad for exemple.
 	
-	private bool touchingLeft, touchingRight, fire, changeArrowRight, changeArrowLeft, pausingGame, quittingGame, restartingLevel, goingNextLevel, goingMainMenu;
+	private bool touchingLeft, touchingRight, fire, changeArrowRight, changeArrowLeft, pausingGame, quittingGame, restartingLevel, goingNextLevel, goingMainMenu, goingListLevel;
 	
 	void isTouchingLeft()
 	{
@@ -72,9 +72,10 @@ public class ManagerInput : SingleBehaviour<ManagerInput> {
 		goingMainMenu = true;
 	}
 
-	void Update()
+	void GoToListLevel()
 	{
-		isTestLeft();
+		Debug.Log ("toto");
+		goingListLevel = true;
 	}
 
 	private bool isTestLeft()
@@ -154,9 +155,21 @@ public class ManagerInput : SingleBehaviour<ManagerInput> {
 
 	public bool goingBackMainMenu()
 	{
+		Debug.Log (goingMainMenu);
 		if(Input.GetKeyDown("v") || goingMainMenu)
 		{	
 			goingMainMenu = false;
+			return true;
+		}
+		else 
+			return false;
+	}
+
+	public bool goingBackListLevel()
+	{
+		if(goingListLevel)
+		{	
+			goingListLevel = false;
 			return true;
 		}
 		else 
@@ -185,8 +198,4 @@ public class ManagerInput : SingleBehaviour<ManagerInput> {
 			return false;
 	}
 
-	public void toto()
-	{
-		Debug.Log ("ouic'estmoi"); 
-	}
 }

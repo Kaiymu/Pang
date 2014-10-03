@@ -32,7 +32,7 @@ public class CustomUIButtonMessage : MonoBehaviour
 	bool mStarted = false;
 	
 	void Start () { mStarted = true; 
-		target = GameObject.FindGameObjectWithTag("Manager");
+		target = GameObject.FindGameObjectWithTag("ManagerInput");
 	}
 	
 	void OnEnable () { if (mStarted) OnHover(UICamera.IsHighlighted(gameObject)); }
