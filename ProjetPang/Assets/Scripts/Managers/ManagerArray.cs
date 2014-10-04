@@ -6,6 +6,8 @@ public class ManagerArray : SingleBehaviour<ManagerArray> {
 
 	private List<GameObject> _listOrb = new List<GameObject>();
 	private List<GameObject> _listArrow = new List<GameObject>();
+
+	private int numberActiveHiearchy;
 	
 	public List<GameObject> listOrb
 	{
@@ -24,4 +26,14 @@ public class ManagerArray : SingleBehaviour<ManagerArray> {
 		}
 	}
 
+	public int countActiveInHiearchy(List<GameObject> listToCount)
+	{
+		numberActiveHiearchy = 0;
+		for(int i = 0; i < listToCount.Count; i++)
+		{
+			if(listToCount[i].activeInHierarchy)
+				numberActiveHiearchy++;
+		}
+		return numberActiveHiearchy;
+	}
 }
