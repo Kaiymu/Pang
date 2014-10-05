@@ -6,6 +6,7 @@ public class ManagerArrow : MonoBehaviour {
 
 	public float ammountPooledObject;
 
+	private string _pooledParentObjectTagName = "PooledArrow"; 
 	private List<GameObject> _listArrow;
 	private GameObject _arrowContainer;
 	
@@ -18,6 +19,6 @@ public class ManagerArrow : MonoBehaviour {
 	{
 		_arrowContainer = ManagerResources.instance.arrowRessourcesContainer;
 		_listArrow = ManagerArray.instance.listArrow;
-		ManagerPool.instance.CreatePool(_arrowContainer, _listArrow, ammountPooledObject);
+		ManagerPool.instance.CreatePool(_arrowContainer, _listArrow, ammountPooledObject, _pooledParentObjectTagName);
 	}
 }

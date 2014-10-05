@@ -3,24 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ManagerOrb : SingleBehaviour<ManagerOrb> {
-	
-	// Créer les orbes en cas de destruction
+
 	// Gère la pool d'orb
+	public float numberOrbs;
+	public float ammountPooledObject;
+
+	private string _pooledParentObjectTagName = "PooledOrb";
 
 	// Mon tableau d'orb.
 	private List<GameObject> _listOrb;
 	private GameObject _orbContainer;
 	private GameObject _orbsRessourcesContainer;
-
-	public float ammountPooledObject;
-
-	public float _numberOrbs;
-
+	
 	// Get the size of the orb wich was destroyed
 	private OrbSize.Size sizeOrb;
 
 	// Retrieve a random orb from the orbContainer
 	private GameObject randomOrb;
+
 
 	void Start()
 	{
@@ -45,7 +45,7 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 	{	
 		_orbContainer = ManagerResources.instance.orbRessourceContainer;
 		_listOrb = ManagerArray.instance.listOrb;
-		ManagerPool.instance.CreatePool(_orbContainer, _listOrb, ammountPooledObject);
+		ManagerPool.instance.CreatePool(_orbContainer, _listOrb, ammountPooledObject, _pooledParentObjectTagName);
 	}
 
 	public void CreateSmallerOrb(GameObject currentOrb)
@@ -55,7 +55,7 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 		if(sizeOrb == OrbSize.Size.smallSize)
 			return;
 		else
-			for(int i = 0; i < _numberOrbs; i++)
+			for(int i = 0; i < numberOrbs; i++)
 			{
 				for(int j = 0; j < _listOrb.Count; j++)
 				{
