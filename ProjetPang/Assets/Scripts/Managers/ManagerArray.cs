@@ -6,6 +6,7 @@ public class ManagerArray : SingleBehaviour<ManagerArray> {
 
 	private List<GameObject> _listOrb = new List<GameObject>();
 	private List<GameObject> _listArrow = new List<GameObject>();
+	private List<GameObject> _listOrbTaped = new List<GameObject>();
 
 	private int numberActiveHiearchy;
 	
@@ -20,11 +21,20 @@ public class ManagerArray : SingleBehaviour<ManagerArray> {
 	public List<GameObject> listArrow
 	{
 		get {return _listArrow;} 
-		set {
-			if(value != null)
+		set {if(value != null)
 				_listArrow = value;
 		}
 	}
+
+	public List<GameObject> listOrbTaped
+	{
+		get {return _listOrbTaped;} 
+		set {
+			if(value != null)
+			_listOrbTaped = value;
+		}
+	}
+	
 
 	public int countActiveInHiearchy(List<GameObject> listToCount)
 	{

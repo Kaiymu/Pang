@@ -4,8 +4,8 @@ using System.Collections;
 public class ManagerInput : SingleBehaviour<ManagerInput> {
 	
 	// Keep all the gesture of the game. Really easy if i want to add other key, or a pad for exemple.
-	
-	private bool touchingLeft, touchingRight, fire, changeArrowRight, changeArrowLeft, pausingGame, quittingGame, restartingLevel, goingNextLevel, goingMainMenu, goingListLevel;
+
+	private bool touchingLeft, touchingRight, fire, changeArrowRight, changeArrowLeft, pausingGame, quittingGame, restartingLevel, goingNextLevel, goingMainMenu, goingListLevel, stopMovement;
 	
 	void isTouchingLeft()
 	{
@@ -74,8 +74,12 @@ public class ManagerInput : SingleBehaviour<ManagerInput> {
 
 	void GoToListLevel()
 	{
-		Debug.Log ("toto");
 		goingListLevel = true;
+	}
+
+	void IsStoppingMovement()
+	{
+		stopMovement = true;
 	}
 
 	private bool isTestLeft()
@@ -192,6 +196,17 @@ public class ManagerInput : SingleBehaviour<ManagerInput> {
 		if(goingNextLevel)
 		{	
 			goingNextLevel = false;
+			return true;
+		}
+		else 
+			return false;
+	}
+
+	public bool stopingMovement()
+	{
+		if(Input.GetKeyDown("r") || stopMovement)
+		{
+			stopMovement = false;
 			return true;
 		}
 		else 

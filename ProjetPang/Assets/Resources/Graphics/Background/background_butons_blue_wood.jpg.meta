@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: 02e9f55dc29253e4587e071f2dfd5d3a
+guid: 14c7299583fb2da4c9d1defbf6709939
 TextureImporter:
   fileIDToRecycleName:
-    21300000: 220px-Circle_-_black_simple.svg
+    21300000: wood-blue-1440x9001
+    21300002: background_butons_blue_wood
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +27,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

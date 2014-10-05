@@ -8,6 +8,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 			
+
 	public float speed;
 
 	private Animator anim;
@@ -18,12 +19,14 @@ public class PlayerMovement : MonoBehaviour {
 	// To know where the player is walking
 	private bool _walkRight;
 	private bool _walkLeft;
-
+	
 	// 0 left, 1 right, 2 idle. To know in wich side he stopped.
 	private int _dirWalk;
 
-	void Start()
-	{
+	// When the game is "paused" because of the time power
+	private bool _canWalk = true;
+
+	void Start() {
 		anim = GetComponent<Animator>();
 	}
 
@@ -63,7 +66,7 @@ public class PlayerMovement : MonoBehaviour {
 		{		
 			if(_dirWalk == 0)
 				anim.SetInteger("dirWalk", 0);
-
+			
 			if(_dirWalk == 1)
 				anim.SetInteger("dirWalk", 1);
 		}
