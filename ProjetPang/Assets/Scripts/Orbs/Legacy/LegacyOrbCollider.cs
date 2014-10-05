@@ -31,8 +31,10 @@ public abstract class LegacyOrbCollider : MonoBehaviour {
 		if(tag == "ArrowNormal")
 		{
 			ManagerOrb.instance.CreateSmallerOrb(this.gameObject);
+			ManagerPowerUp.instance.PutRandomPowerUpInGame(this.gameObject);
 			this.gameObject.SetActive(false);
 			collider.SetActive(false);
+
 		}
 	}
 }

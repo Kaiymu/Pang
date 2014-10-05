@@ -8,10 +8,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400000}
   - 50: {fileID: 5000000}
   - 212: {fileID: 21200000}
   - 61: {fileID: 6100000}
+  - 114: {fileID: 11400000}
   - 114: {fileID: 11400004}
   m_Layer: 8
   m_Name: ArrowNormal
@@ -69,8 +69,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a54aee9c7fad4409bede240737f578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionShootedArrow: 0
-  _angleZ: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -76,8 +76,7 @@ public class PlayerShoot : MonoBehaviour {
 				if(!_arrows[i].activeInHierarchy && _arrows[i].tag == "ArrowNormal")
 				{
 					_arrows[i].transform.position = transform.position;
-					_arrows[i].GetComponent<ArrowMovement>()._angleZ = this.transform.rotation;
-					_arrows[i].GetComponent<ArrowMovement>().setSpeed(speed);
+					_arrows[i].GetComponent<ArrowMovement>().speed = speed;
 					_arrows[i].SetActive(true);
 					break;
 				}

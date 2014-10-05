@@ -9,27 +9,18 @@ using System.Collections;
 public class ArrowMovement : MonoBehaviour {
 
 	private float _speed;
-
-	public enum DirectionShootedArrow{Up, UpLeft, UpRight};
-	public DirectionShootedArrow directionShootedArrow;
-
+	
 	private Vector2 _direction;
-	public Quaternion _angleZ;
 
 	void OnEnable()
 	{
 		_direction = transform.up;
-		transform.rotation = _angleZ;
 	}
 	
-	public float getSpeed()
+	public float speed
 	{
-		return _speed;
-	}
-	
-	public void setSpeed(float speed)
-	{
-		_speed = speed;
+		get {return _speed;}
+		set {_speed = value;}
 	}
 
 	void FixedUpdate () 
