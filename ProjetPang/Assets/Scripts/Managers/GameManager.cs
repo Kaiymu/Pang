@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
 			this.GetComponent<ActiveStartObject>().OnGlobalEnable();
 			this.GetComponent<ManagerPlatform>().OnGlobalEnable();
 			//this.GetComponent<ManagerPool>().OnGlobalEnable();
-			this.GetComponent<ManagerPowerUp>().OnGlobalEnable();
+			//this.GetComponent<ManagerPowerUp>().OnGlobalEnable();
 			this.GetComponent<DetectBoundaries>().OnGlobalEnable();
 			this.GetComponent<DisplayAmmo>().OnGlobalEnable();
 			this.GetComponent<SetPositionBorderArrowType>().OnGlobalEnable();
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
 			this.GetComponent<ActiveStartObject>().OnGlobalEnable();
 			this.GetComponent<ManagerPlatform>().OnGlobalEnable();
 			//this.GetComponent<ManagerPool>().OnGlobalEnable();
-			this.GetComponent<ManagerPowerUp>().OnGlobalEnable();
+			//this.GetComponent<ManagerPowerUp>().OnGlobalEnable();
 			this.GetComponent<DetectBoundaries>().OnGlobalEnable();
 			this.GetComponent<DisplayAmmo>().OnGlobalEnable();
 			this.GetComponent<SetPositionBorderArrowType>().OnGlobalEnable();

@@ -12,7 +12,7 @@ public class PowerUpAttract : MonoBehaviour {
 
 	void Start()
 	{
-		_ammoAttractShoot = ManagerDifficulty.Instance.getAmmoAttractShoot();
+		//_ammoAttractShoot = ManagerDifficulty.Instance.getAmmoAttractShoot();
 	}
 	
 	void OnTriggerEnter2D(Collider2D col)

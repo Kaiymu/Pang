@@ -12,7 +12,7 @@ public class PowerUpLife : MonoBehaviour {
 
 	void Start()
 	{
-		_bonusLife = ManagerDifficulty.Instance.getAmmoLife();
+		//_bonusLife = ManagerDifficulty.Instance.getAmmoLife();
 	}
 	
 	void OnTriggerEnter2D(Collider2D col)

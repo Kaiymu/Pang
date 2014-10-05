@@ -14,7 +14,7 @@ public class PowerUpTripleShoot : MonoBehaviour {
 
 	void Start()
 	{
-		_ammoTripleShoot = ManagerDifficulty.Instance.getAmmoTripleShoot();
+		//_ammoTripleShoot = ManagerDifficulty.Instance.getAmmoTripleShoot();
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
