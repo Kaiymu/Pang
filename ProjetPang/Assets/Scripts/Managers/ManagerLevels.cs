@@ -8,9 +8,9 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 	private float currentLevel;
 	// Use this for initialization
 
-	void Update()
+	void Awake()
 	{
-		GoToMainMenu();
+		DontDestroyOnLoad (transform.gameObject);
 	}
 
 	void GoToMainMenu()
@@ -32,4 +32,10 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 		Time.timeScale = 1;
 		Application.LoadLevel(gameObjectLevel.name);
 	}
+
+	void QuitGame()
+	{
+		Application.Quit();
+	}
+
 }

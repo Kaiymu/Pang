@@ -11,22 +11,6 @@ public class BackgroundTransparent : MonoBehaviour {
 		this.gameObject.renderer.material.color = startColorBackground;
 	}
 
-	void OnEnable()
-	{
-		// When the level is complete, or the player as lost.
-		ManagerMenu.OnEndLevel += FadeInBackground;
-		// When the player pause the game.
-		ManagerMenu.OnPauseGame += FadeInBackground;
-		// When the player unpause the game.
-		ManagerMenu.OnUnPauseGame += UnfadeBackground;
-	}
-
-	void OnDisable()
-	{
-		ManagerMenu.OnEndLevel -= FadeInBackground;
-		ManagerMenu.OnPauseGame -= FadeInBackground;
-		ManagerMenu.OnUnPauseGame -= UnfadeBackground;
-	}
 
 	void FadeInBackground()
 	{

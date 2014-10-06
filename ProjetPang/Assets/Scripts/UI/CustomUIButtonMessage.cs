@@ -22,6 +22,9 @@ public class CustomUIButtonMessage : MonoBehaviour
 		OnDoubleClick,
 	}
 
+	public enum TargetTag{ManagerInput, ManagerLevels, ManagerMenu}
+	public TargetTag targetTagName;
+
 	public string functionName;
 	public Trigger trigger = Trigger.OnClick;
 	public bool includeChildren = false;
@@ -32,7 +35,7 @@ public class CustomUIButtonMessage : MonoBehaviour
 	bool mStarted = false;
 	
 	void Start () { mStarted = true; 
-		target = GameObject.FindGameObjectWithTag("ManagerInput");
+		target = GameObject.FindGameObjectWithTag(targetTagName.ToString());
 	}
 	
 	void OnEnable () { if (mStarted) OnHover(UICamera.IsHighlighted(gameObject)); }

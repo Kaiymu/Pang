@@ -576,7 +576,7 @@ GameObject:
   - 65: {fileID: 6500014}
   - 114: {fileID: 11400076}
   m_Layer: 15
-  m_Name: 1_UI_button_resume
+  m_Name: 2_UI_button_resume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -611,7 +611,7 @@ GameObject:
   - 65: {fileID: 6500016}
   - 114: {fileID: 11400084}
   m_Layer: 15
-  m_Name: 2_UI_button_quit
+  m_Name: 3_UI_button_quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -651,7 +651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100116
 GameObject:
   m_ObjectHideFlags: 1
@@ -666,7 +666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &100118
 GameObject:
   m_ObjectHideFlags: 1
@@ -1970,6 +1970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: isPausingGame
   trigger: 0
   includeChildren: 0
@@ -2117,6 +2118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: isRealeasingFire
   trigger: 4
   includeChildren: 0
@@ -2255,6 +2257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: isQuittingGame
   trigger: 0
   includeChildren: 0
@@ -2403,6 +2406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: GoToMainMenu
   trigger: 0
   includeChildren: 0
@@ -2551,6 +2555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: isGoingNextLevel
   trigger: 0
   includeChildren: 0
@@ -2699,6 +2704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: isQuittingGame
   trigger: 0
   includeChildren: 0
@@ -2847,6 +2853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: GoToMainMenu
   trigger: 0
   includeChildren: 0
@@ -2995,6 +3002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: isRestartingLevel
   trigger: 0
   includeChildren: 0
@@ -3143,6 +3151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: isPausingGame
   trigger: 0
   includeChildren: 0
@@ -3291,7 +3300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  functionName: isQuittingGame
+  targetTagName: 1
+  functionName: QuitGame
   trigger: 0
   includeChildren: 0
 --- !u!114 &11400086
@@ -3439,6 +3449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 1
   functionName: GoToMainMenu
   trigger: 0
   includeChildren: 0
@@ -3698,6 +3709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: IsStoppingMovement
   trigger: 0
   includeChildren: 0
@@ -3784,6 +3796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: isRealeasingLeft
   trigger: 4
   includeChildren: 0
@@ -3798,6 +3811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: isTouchingLeft
   trigger: 3
   includeChildren: 0
@@ -3884,6 +3898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: isFiring
   trigger: 3
   includeChildren: 0
@@ -4032,6 +4047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: 
   trigger: 0
   includeChildren: 0
@@ -4169,6 +4185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: isRealeasingRight
   trigger: 4
   includeChildren: 0
@@ -4183,6 +4200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dc55740ed868e43a67e48c6be13e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTagName: 0
   functionName: isTouchingRight
   trigger: 3
   includeChildren: 0

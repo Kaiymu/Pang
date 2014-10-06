@@ -11,7 +11,7 @@ public class ManagerTouchTap : MonoBehaviour {
 	private RaycastHit2D _hit;
 
 	private int timeMoving = 0;
-	private bool _pauseToTap;
+	private bool _pauseToTap = false;
 	public int timeStopPause = 0;
 
 	void Update () {
@@ -28,12 +28,12 @@ public class ManagerTouchTap : MonoBehaviour {
 	// Stop the time for an amount of frame (Can't use time property because the time.scale is at 0).
 	void PausingToTap()
 	{
-		if(ManagerInput.instance.stopingMovement()){
+		if(ManagerInput.instance.stopingMovement() && !_pauseToTap){
 			_pauseToTap = true;
 			Time.timeScale = 0;
 		}
 
-		if(Time.timeScale == 0)
+		if(Time.timeScale == 0 && _pauseToTap)
 		{
 			timeMoving++;
 			
@@ -70,7 +70,8 @@ public class ManagerTouchTap : MonoBehaviour {
 		{
 			for(int i = 0; i < ManagerArray.instance.listOrbTaped.Count; i++)
 			{
-				ManagerArray.instance.listOrbTaped[i].GetComponent<OrbTapAction>().TapAction();
+				if(ManagerArray.instance.listOrbTaped[i].activeInHierarchy)
+					ManagerArray.instance.listOrbTaped[i].GetComponent<OrbTapAction>().TapAction();
 			}
 
 			ManagerArray.instance.listOrbTaped.Clear();

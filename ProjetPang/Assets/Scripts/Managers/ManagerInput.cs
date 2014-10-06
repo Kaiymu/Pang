@@ -6,7 +6,11 @@ public class ManagerInput : SingleBehaviour<ManagerInput> {
 	// Keep all the gesture of the game. Really easy if i want to add other key, or a pad for exemple.
 
 	private bool touchingLeft, touchingRight, fire, changeArrowRight, changeArrowLeft, pausingGame, quittingGame, restartingLevel, goingNextLevel, goingMainMenu, goingListLevel, stopMovement;
-	
+
+	void Awake()
+	{
+		DontDestroyOnLoad (transform.gameObject);
+	}
 	void isTouchingLeft()
 	{
 		touchingLeft = true;
@@ -159,7 +163,6 @@ public class ManagerInput : SingleBehaviour<ManagerInput> {
 
 	public bool goingBackMainMenu()
 	{
-		Debug.Log (goingMainMenu);
 		if(Input.GetKeyDown("v") || goingMainMenu)
 		{	
 			goingMainMenu = false;
