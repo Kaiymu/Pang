@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 /* Main feature of the game;
  * Stop the time, calcul where the finger of the players his, to know which balls he has touched, and applies on effect on them.
@@ -20,8 +21,8 @@ public class ManagerTouchTap : MonoBehaviour {
 
 		if(_pauseToTap)
 			Touching2DElements();
-
-		ActionOnTapedObject();
+		else
+			ActionOnTapedObject();
 	
 	}
 
@@ -66,15 +67,16 @@ public class ManagerTouchTap : MonoBehaviour {
 	// Call the tap action method on each balls that was stored on the temporary List after the pause
 	void ActionOnTapedObject()
 	{
-		if(!_pauseToTap && ManagerArray.instance.listOrbTaped.Count != 0)
+		if(ManagerArray.instance.listOrbTaped.Count != 0)
 		{
 			for(int i = 0; i < ManagerArray.instance.listOrbTaped.Count; i++)
 			{
 				if(ManagerArray.instance.listOrbTaped[i].activeInHierarchy)
 					ManagerArray.instance.listOrbTaped[i].GetComponent<OrbTapAction>().TapAction();
-			}
 
+			}
 			ManagerArray.instance.listOrbTaped.Clear();
+			Debug.Log (ManagerArray.instance.listOrbTaped.Count);
 		}
 	}
 }
