@@ -8,8 +8,10 @@ using System.Collections.Generic;
 
 public class ManagerTouchTap : MonoBehaviour {
 
+	public float radiusTap;
+
 	private Vector3 _pos;
-	private RaycastHit2D _hit;
+	private RaycastHit2D[] _hit;
 
 	private int timeMoving = 0;
 	private bool _pauseToTap = false;
@@ -51,14 +53,15 @@ public class ManagerTouchTap : MonoBehaviour {
 	void Touching2DElements()
 	{
 		_pos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		_hit = Physics2D.Raycast(_pos, Vector2.zero);
-		
-		if (_hit != null && _hit.collider != null) {
-			if(_hit.collider.tag == "OrbIce" || _hit.collider.tag == "OrbDarkness"){
-				if(!ManagerArray.instance.listOrbTaped.Contains(_hit.collider.gameObject))
+		_hit = Physics2D.CircleCastAll(_pos, radiusTap, Camera.main.transform.forward, 1);
+
+		for(int i = 0; i < _hit.Length; i++)
+		{
+			if(_hit[i].collider.tag == "OrbIce" || _hit[i].collider.tag == "OrbDarkness"){
+				if(!ManagerArray.instance.listOrbTaped.Contains(_hit[i].collider.gameObject))
 				{
-					_hit.collider.renderer.material.color = Color.red;
-					ManagerArray.instance.listOrbTaped.Add(_hit.collider.gameObject);
+					_hit[i].collider.renderer.material.color = Color.red;
+					ManagerArray.instance.listOrbTaped.Add(_hit[i].collider.gameObject);
 				}
 			}
 		}
@@ -76,7 +79,6 @@ public class ManagerTouchTap : MonoBehaviour {
 
 			}
 			ManagerArray.instance.listOrbTaped.Clear();
-			Debug.Log (ManagerArray.instance.listOrbTaped.Count);
 		}
 	}
 }
