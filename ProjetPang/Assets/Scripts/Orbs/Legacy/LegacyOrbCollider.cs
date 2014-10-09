@@ -26,15 +26,19 @@ public abstract class LegacyOrbCollider : MonoBehaviour {
 			_orbTestMovement.MovementWall(wallName);
 	}
 	
-	protected virtual void ArrowCollision(string tag, GameObject collider)
+	protected virtual void ArrowCollision(string tag, GameObject collided)
 	{
 		if(tag == "ArrowNormal")
-		{
-			ManagerOrb.instance.CreateSmallerOrb(this.gameObject);
-			ManagerPowerUp.instance.PutRandomPowerUpInGame(this.gameObject);
-			this.gameObject.SetActive(false);
-			collider.SetActive(false);
+			DestroyOrb(this.gameObject, collided);
+	}
 
-		}
+	public virtual void DestroyOrb(GameObject toDestroy, GameObject collided)
+	{
+		ManagerOrb.instance.CreateSmallerOrb(toDestroy);
+		ManagerPowerUp.instance.PutRandomPowerUpInGame(toDestroy);
+		toDestroy.SetActive(false);
+
+		if(collided != null)
+			collided.SetActive(false);
 	}
 }

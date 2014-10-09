@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: 80c74e932c977fd47b4835351ad70a3a
+guid: 8c7170de1f2da26439175eb28e17958c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: leaf-acid-3
+    21300000: wind-blue-3
+    21300002: powerup_wind
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

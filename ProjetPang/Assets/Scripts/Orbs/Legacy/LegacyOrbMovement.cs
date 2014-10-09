@@ -3,8 +3,8 @@ using System.Collections;
 
 public abstract class LegacyOrbMovement : MonoBehaviour {
 
-	public float boucinessY;
-	public float boucinessX;
+	public float bouncinessY;
+	public float bouncinessX;
 	
 	public float startBouciness;
 
@@ -19,13 +19,17 @@ public abstract class LegacyOrbMovement : MonoBehaviour {
 	public virtual void MovementWall(string nameWall)
 	{	
 		if(nameWall == "2_LeftWall")
-			rigidbody2D.AddForce(new Vector2(-boucinessX, 0));
+			rigidbody2D.AddForce(new Vector2(-bouncinessX, 0));
 		
 		if(nameWall == "3_RightWall")
-			rigidbody2D.AddForce(new Vector2(boucinessX, 0));
+			rigidbody2D.AddForce(new Vector2(bouncinessX, 0));
 		
 		if(nameWall == "1_BottomWall")
-			rigidbody2D.AddForce(new Vector2(0, boucinessY));
+			rigidbody2D.AddForce(new Vector2(0, bouncinessY));
+	}
 
+	public virtual void FloattingOrbs(GameObject orbToFloat)
+	{
+		orbToFloat.rigidbody2D.gravityScale = 0.3f;
 	}
 }

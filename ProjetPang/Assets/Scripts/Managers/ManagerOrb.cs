@@ -72,8 +72,8 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 							if(sizeOrb == OrbSize.Size.bigSize)
 							{
 								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.normalSize;
-								randomOrb.GetComponent<OrbMovement>().boucinessY = 220;
-								randomOrb.GetComponent<OrbMovement>().boucinessX = 110;
+								randomOrb.GetComponent<OrbMovement>().bouncinessY = 220;
+								randomOrb.GetComponent<OrbMovement>().bouncinessX = 110;
 								randomOrb.GetComponent<OrbMovement>().startBouciness = 110;
 								randomOrb.SetActive(true);
 								break;
@@ -82,8 +82,8 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 							if(sizeOrb == OrbSize.Size.normalSize)
 							{
 								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.midSize;
-								randomOrb.GetComponent<OrbMovement>().boucinessY = 180;
-								randomOrb.GetComponent<OrbMovement>().boucinessX = 90; 
+								randomOrb.GetComponent<OrbMovement>().bouncinessY = 180;
+								randomOrb.GetComponent<OrbMovement>().bouncinessX = 90; 
 								randomOrb.GetComponent<OrbMovement>().startBouciness = 90;
 								randomOrb.SetActive(true);
 								break;
@@ -92,8 +92,8 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 							if(sizeOrb == OrbSize.Size.midSize)
 							{
 								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.smallSize;
-								randomOrb.GetComponent<OrbMovement>().boucinessY = 150;
-								randomOrb.GetComponent<OrbMovement>().boucinessX = 75;
+								randomOrb.GetComponent<OrbMovement>().bouncinessY = 150;
+								randomOrb.GetComponent<OrbMovement>().bouncinessX = 75;
 								randomOrb.GetComponent<OrbMovement>().startBouciness = 75;
 								randomOrb.SetActive(true);
 								break;
@@ -104,8 +104,8 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 							if(sizeOrb == OrbSize.Size.bigSize)
 							{
 								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.normalSize;
-								randomOrb.GetComponent<OrbMovement>().boucinessY = 220;
-								randomOrb.GetComponent<OrbMovement>().boucinessX = 110; 
+								randomOrb.GetComponent<OrbMovement>().bouncinessY = 220;
+								randomOrb.GetComponent<OrbMovement>().bouncinessX = 110; 
 								randomOrb.GetComponent<OrbMovement>().startBouciness = -110;
 								randomOrb.SetActive(true);
 								break;
@@ -114,8 +114,8 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 							if(sizeOrb == OrbSize.Size.normalSize)
 							{
 								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.midSize;
-								randomOrb.GetComponent<OrbMovement>().boucinessY = 180;
-								randomOrb.GetComponent<OrbMovement>().boucinessX = 90; 
+								randomOrb.GetComponent<OrbMovement>().bouncinessY = 180;
+								randomOrb.GetComponent<OrbMovement>().bouncinessX = 90; 
 								randomOrb.GetComponent<OrbMovement>().startBouciness = -90; 
 								randomOrb.SetActive(true);
 								break;
@@ -124,8 +124,8 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 							if(sizeOrb == OrbSize.Size.midSize)
 							{
 								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.smallSize;
-								randomOrb.GetComponent<OrbMovement>().boucinessY = 150;
-								randomOrb.GetComponent<OrbMovement>().boucinessX = 75; 
+								randomOrb.GetComponent<OrbMovement>().bouncinessY = 150;
+								randomOrb.GetComponent<OrbMovement>().bouncinessX = 75; 
 								randomOrb.GetComponent<OrbMovement>().startBouciness = -75; 
 								randomOrb.SetActive(true);
 								break;
@@ -135,4 +135,11 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 				}
 			}
 	}
+
+	void AffectOrb(GameObject orbToAffect)
+	{
+
+
+	}
+
 }

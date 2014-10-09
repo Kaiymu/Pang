@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: c583c4f0b63177e458459292daa18351
+guid: 62f145b463443f04b84ade315b78cc1f
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ice-blue-2
+    21300000: light-blue-3
+    21300002: powerup_frost
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -41,11 +42,7 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: iPhone
-    maxTextureSize: 1024
-    textureFormat: -2
-    compressionQuality: 50
+  buildTargetSettings: []
   spriteSheet:
     sprites: []
   spritePackingTag: 

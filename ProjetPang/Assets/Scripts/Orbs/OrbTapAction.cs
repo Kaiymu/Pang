@@ -7,4 +7,9 @@ public class OrbTapAction : LegacyOrbTapAction {
 	{
 		base.TapAction();
 	}
+
+	protected override void Update()
+	{
+		base.Update();
+	}
 }
