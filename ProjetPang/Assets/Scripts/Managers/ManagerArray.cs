@@ -8,9 +8,13 @@ public class ManagerArray : SingleBehaviour<ManagerArray> {
 	private List<GameObject> _listArrow = new List<GameObject>();
 	private List<GameObject> _listOrbTaped = new List<GameObject>();
 	private List<GameObject> _listPowersUp = new List<GameObject>();
+	private float[] _percentageSpawnPowerUp;
 
-	private int numberActiveHiearchy;
-	
+	void Start()
+	{
+		_percentageSpawnPowerUp = new float[ManagerResources.instance.powerUpRessourcesContainer.transform.childCount];
+	}
+
 	public List<GameObject> listOrb
 	{
 		get {return _listOrb;} 
@@ -45,9 +49,17 @@ public class ManagerArray : SingleBehaviour<ManagerArray> {
 		}
 	}
 
+	public float[] percentageSpawnPowerUp
+	{
+		get {return _percentageSpawnPowerUp;} 
+		set {if(value != null)
+			_percentageSpawnPowerUp = value;
+		}
+	}
+
 	public int countActiveInHiearchy(List<GameObject> listToCount)
 	{
-		numberActiveHiearchy = 0;
+		int numberActiveHiearchy = 0;
 		for(int i = 0; i < listToCount.Count; i++)
 		{
 			if(listToCount[i].activeInHierarchy)

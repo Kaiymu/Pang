@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df862a7ff723eda4a81536cb97dc2607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanceToSpawn: 0
+  chanceToSpawn: .100000001
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df862a7ff723eda4a81536cb97dc2607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanceToSpawn: 75
+  chanceToSpawn: .300000012
 --- !u!114 &11400020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df862a7ff723eda4a81536cb97dc2607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanceToSpawn: 50
+  chanceToSpawn: .5
 --- !u!114 &11400022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df862a7ff723eda4a81536cb97dc2607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanceToSpawn: 25
+  chanceToSpawn: .100000001
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
