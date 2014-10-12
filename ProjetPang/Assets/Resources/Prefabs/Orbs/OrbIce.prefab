@@ -61,7 +61,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .947664499, y: .122051299, z: 0}
+  m_LocalPosition: {x: -.430181623, y: 1.39716589, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -100,11 +100,11 @@ Rigidbody2D:
   m_GameObject: {fileID: 100000}
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: .5
+  m_AngularDrag: 0
+  m_GravityScale: .400000006
   m_FixedAngle: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
 --- !u!58 &5800000
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92307b558909b043b0834642bcc8db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bouncinessY: 250
+  bouncinessY: 220
   bouncinessX: 125
   startBouciness: 125
 --- !u!114 &11400006
@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e37fb2ab8951f4b8c14b5daa5be5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  malusTaped: 0
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1

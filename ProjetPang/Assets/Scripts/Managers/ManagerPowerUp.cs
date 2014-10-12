@@ -10,10 +10,10 @@ public class ManagerPowerUp : SingleBehaviour<ManagerPowerUp> {
 	private string _pooledParentObjectTagName = "PooledPowerUp";
 	private GameObject _powerUpContainer;
 	private List<GameObject> _listPowerUp;
-
+	
 	private int _randomNumber;
 	private GameObject _randomPowerUp;
-	
+
 	void Start()
 	{
 		CreatePoolPowerUp();
@@ -26,18 +26,21 @@ public class ManagerPowerUp : SingleBehaviour<ManagerPowerUp> {
 		ManagerPool.instance.CreatePool(_powerUpContainer, _listPowerUp, ammountPooledObject, _pooledParentObjectTagName);
 	}
 
-	public void PutRandomPowerUpInGame(GameObject whereToInstantiate)
+	public void PutRandomPowerUpInGame(GameObject _whereToInstantiate)
 	{
-		if(whereToInstantiate != null)
+		if(_whereToInstantiate != null)
 		{
 			_randomNumber = Random.Range(0, ManagerArray.instance.listPowerUp.Count);
-			_randomPowerUp = ManagerArray.instance.listPowerUp[_randomNumber];
 
-			if(!_randomPowerUp.activeInHierarchy)
+			if(_randomNumber < (ManagerArray.instance.listPowerUp.Count / 4))
 			{
-				_randomPowerUp.transform.position = whereToInstantiate.transform.position;
-				_randomPowerUp.GetComponent<PowerUpMovement>().speed = speed;
-				_randomPowerUp.SetActive(true);
+				_randomPowerUp = ManagerArray.instance.listPowerUp[_randomNumber];
+				if(!_randomPowerUp.activeInHierarchy)
+				{
+					_randomPowerUp.transform.position = _whereToInstantiate.transform.position;
+					_randomPowerUp.GetComponent<PowerUpMovement>().speed = speed;
+					_randomPowerUp.SetActive(true);
+				}
 			}
 		}
 	}

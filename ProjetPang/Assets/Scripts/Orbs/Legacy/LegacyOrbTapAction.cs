@@ -20,6 +20,7 @@ public abstract class LegacyOrbTapAction : MonoBehaviour {
 
 	public virtual void TapAction()
 	{
+		/*
 		if(malusTaped) 
 			MalusEffect();
 		else 
@@ -46,6 +47,7 @@ public abstract class LegacyOrbTapAction : MonoBehaviour {
 				break;
 			}
 		}
+		*/
 	}
 
 	protected virtual void Update()
@@ -56,7 +58,8 @@ public abstract class LegacyOrbTapAction : MonoBehaviour {
 
 	protected virtual void FireEffect()
 	{
-		_orbCollider.DestroyOrb(this.gameObject, null);
+		//_orbCollider.DestroyOrb(this.gameObject, null);
+		//gameObject.AddComponent<FireEffect>();
 	}
 
 	protected virtual void WaterEffect()
@@ -76,7 +79,6 @@ public abstract class LegacyOrbTapAction : MonoBehaviour {
 
 	protected virtual void MalusEffect()
 	{
-		Debug.Log ("toto");
 		_player.GetComponent<PlayerMovement>().speed -= 0.2f;
 	}
 }

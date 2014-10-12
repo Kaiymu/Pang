@@ -3,6 +3,7 @@ using System.Collections;
 
 public abstract class LegacyOrbCollider : MonoBehaviour {
 
+	public int chanceBonusAppaering;
 	protected OrbMovement _orbTestMovement;
 
 	protected virtual void OnEnable()

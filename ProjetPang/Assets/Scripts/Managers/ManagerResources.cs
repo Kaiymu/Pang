@@ -7,6 +7,8 @@ public class ManagerResources : SingleBehaviour<ManagerResources> {
 	private GameObject _arrowRessourcesContainer;
 	private GameObject _powerUpRessourcesContainer;
 
+	public AddComponentTest _addComponentTest;
+
 	void Awake()
 	{
 		orbRessourceContainer = Resources.Load ("Prefabs/Orbs/OrbsRessourcesContainer") as GameObject;

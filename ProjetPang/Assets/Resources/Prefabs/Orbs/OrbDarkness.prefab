@@ -317,6 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e37fb2ab8951f4b8c14b5daa5be5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  malusTaped: 0
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -393,6 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e37fb2ab8951f4b8c14b5daa5be5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  malusTaped: 0
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1

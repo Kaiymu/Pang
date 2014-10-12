@@ -57,10 +57,9 @@ public class ManagerTouchTap : MonoBehaviour {
 
 		for(int i = 0; i < _hit.Length; i++)
 		{
-			if(_hit[i].collider.tag == "OrbIce" || _hit[i].collider.tag == "OrbDarkness" && _hit[i].collider.tag == "OrbMalusTaped"){
+			if(_hit[i].collider.tag == "OrbIce" || _hit[i].collider.tag == "OrbDarkness" || _hit[i].collider.tag == "OrbMalusTaped"){
 				if(!ManagerArray.instance.listOrbTaped.Contains(_hit[i].collider.gameObject))
 				{
-					Debug.Log ("toto");
 					_hit[i].collider.renderer.material.color = Color.red;
 					ManagerArray.instance.listOrbTaped.Add(_hit[i].collider.gameObject);
 				}
@@ -76,7 +75,7 @@ public class ManagerTouchTap : MonoBehaviour {
 			for(int i = 0; i < ManagerArray.instance.listOrbTaped.Count; i++)
 			{
 				if(ManagerArray.instance.listOrbTaped[i].activeInHierarchy)
-					ManagerArray.instance.listOrbTaped[i].GetComponent<OrbTapAction>().TapAction();
+					ManagerOrb.instance.AffectOrb(ManagerArray.instance.listOrbTaped[i]);
 			}
 			ManagerArray.instance.listOrbTaped.Clear();
 		}
