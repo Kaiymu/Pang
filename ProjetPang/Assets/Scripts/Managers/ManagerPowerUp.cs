@@ -49,6 +49,7 @@ public class ManagerPowerUp : SingleBehaviour<ManagerPowerUp> {
 							_randomPowerUp.transform.position = _whereToInstantiate.transform.position;
 							_randomPowerUp.GetComponent<PowerUpMovement>().speed = speed;
 							_randomPowerUp.SetActive(true);
+							break;
 						}
 					}
 				}

@@ -345,6 +345,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400040}
   - 114: {fileID: 11400024}
+  - 114: {fileID: 11400114}
   m_Layer: 31
   m_Name: CNJoystick
   m_TagString: Untagged
@@ -1102,7 +1103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.5879602, y: -7.30000019, z: 0}
+  m_LocalPosition: {x: -10.8979607, y: -7.07000017, z: 0}
   m_LocalScale: {x: 1.79999995, y: 1.79999995, z: 1}
   m_Children:
   - {fileID: 400038}
@@ -3789,6 +3790,25 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
+--- !u!114 &11400114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ce014143eafad4e85b805e3bcef396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _anchor: 9
+  _axisNameX: Horizontal
+  _axisNameY: Vertical
+  _touchZoneSize: {x: 6, y: 3}
+  _margins: {x: 3.49000001, y: 1.92999995}
+  _dragRadius: .75
+  _snapsToFinger: 0
+  _isHiddenIfNotTweaking: 0
 --- !u!114 &11400122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4293,7 +4313,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 4fd32fb312637ff4bbdcface6a940c8f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30c959c7400b357428690f940f3d9df0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21200020
 SpriteRenderer:

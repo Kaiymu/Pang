@@ -14,7 +14,6 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
-  - 114: {fileID: 11400000}
   m_Layer: 11
   m_Name: OrbMalusTaped
   m_TagString: OrbMalusTaped
@@ -118,18 +117,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .159999996
   m_Center: {x: 0, y: 0}
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10e37fb2ab8951f4b8c14b5daa5be5eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  malusTaped: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5376114d3b5925f45a2f52cb097636f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chanceBonusAppaering: 0
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1
