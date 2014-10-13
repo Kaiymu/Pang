@@ -8,12 +8,6 @@ public class ManagerArray : SingleBehaviour<ManagerArray> {
 	private List<GameObject> _listArrow = new List<GameObject>();
 	private List<GameObject> _listOrbTaped = new List<GameObject>();
 	private List<GameObject> _listPowersUp = new List<GameObject>();
-	private float[] _percentageSpawnPowerUp;
-
-	void Start()
-	{
-		_percentageSpawnPowerUp = new float[ManagerResources.instance.powerUpRessourcesContainer.transform.childCount];
-	}
 
 	public List<GameObject> listOrb
 	{
@@ -46,14 +40,6 @@ public class ManagerArray : SingleBehaviour<ManagerArray> {
 		set {
 			if(value != null)
 				_listPowersUp = value;
-		}
-	}
-
-	public float[] percentageSpawnPowerUp
-	{
-		get {return _percentageSpawnPowerUp;} 
-		set {if(value != null)
-			_percentageSpawnPowerUp = value;
 		}
 	}
 

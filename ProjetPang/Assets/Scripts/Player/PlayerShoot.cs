@@ -14,31 +14,23 @@ public class PlayerShoot : MonoBehaviour {
 	
 	//Current position of the ammo in the array.
 	private int _currentPosArray = 0;
-	
-	private GameObject _shootedArrow;
-	private ArrowMovement _shootSpeed;
-
-	//Pool object
-
-	private bool _canShoot = true;
-	
 	private Animator anim;
-	
 	private float timeShoot = 0f;
-	private float fireRate = 1f;
-
 	private int _numberArrowOnGame;
-
 	private  List<GameObject> _arrows = new List<GameObject>();
 
-	// Temporary value to know if the number of ammo exced 4 or not.
-	private float tempAmmoTripleShoot;
-	private float tempAmmoAttractShoot;
 
 	void Awake()
 	{	
 		anim = GetComponent<Animator>();
 		_numberArrowOnGame = 0;
+	}
+
+	public int numberArrowOnGame
+	{
+		get{ return _numberArrowOnGame;}
+		set{if(value != null)
+			_numberArrowOnGame = value;}
 	}
 
 	void Start()
@@ -70,7 +62,8 @@ public class PlayerShoot : MonoBehaviour {
 	void Shoot()
 	{	
 		if(shootType[_currentPosArray] == "normal")
-		{ 	anim.SetBool("isShooting", true);
+		{ 	
+			anim.SetBool("isShooting", true);
 			for(int i = 0; i < _arrows.Count; i++)
 			{
 				if(!_arrows[i].activeInHierarchy && _arrows[i].tag == "ArrowNormal")

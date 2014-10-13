@@ -8,7 +8,7 @@ public abstract class LegacyPowerUpElements : MonoBehaviour {
 		if(col.gameObject.tag == "Player")
 		{
 			gameObject.SetActive(false);
-			ActiveCollisionPlayer();
+			ActiveCollisionPlayer(col.gameObject);
 		}
 
 		if(col.gameObject.tag == "Wall")
@@ -16,5 +16,5 @@ public abstract class LegacyPowerUpElements : MonoBehaviour {
 
 	}
 
-	protected abstract void ActiveCollisionPlayer();
+	protected abstract void ActiveCollisionPlayer(GameObject player);
 }

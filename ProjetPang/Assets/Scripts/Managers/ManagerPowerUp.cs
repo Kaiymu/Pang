@@ -17,7 +17,6 @@ public class ManagerPowerUp : SingleBehaviour<ManagerPowerUp> {
 	void Start()
 	{
 		CreatePoolPowerUp();
-		PutSeedInArray();
 	}
 
 	void CreatePoolPowerUp()
@@ -26,15 +25,6 @@ public class ManagerPowerUp : SingleBehaviour<ManagerPowerUp> {
 		_listPowerUp = ManagerArray.instance.listPowerUp;
 		ManagerPool.instance.CreatePool(_powerUpContainer, _listPowerUp, ammountPooledObject, _pooledParentObjectTagName);
 	}
-
-	void PutSeedInArray()
-	{
-		for(int i = 0; i < _powerUpContainer.transform.childCount; i++)
-		{
-			ManagerArray.instance.percentageSpawnPowerUp[i] = _powerUpContainer.transform.GetChild(i).GetComponent<PowerUpChanceSpawn>().chanceToSpawn;
-		}
-	}
-	
 
 	public void PutRandomPowerUpInGame(GameObject _whereToInstantiate)
 	{
