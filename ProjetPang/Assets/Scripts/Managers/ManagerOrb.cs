@@ -73,6 +73,7 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 								randomOrb.GetComponent<OrbMovement>().bouncinessY = 190;
 								randomOrb.GetComponent<OrbMovement>().bouncinessX = 110;
 								randomOrb.GetComponent<OrbMovement>().startBouciness = 110;
+
 								randomOrb.SetActive(true);
 								break;
 							}

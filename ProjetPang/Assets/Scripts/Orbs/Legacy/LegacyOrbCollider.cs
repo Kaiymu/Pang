@@ -2,8 +2,7 @@
 using System.Collections;
 
 public abstract class LegacyOrbCollider : MonoBehaviour {
-
-	public int chanceBonusAppaering;
+	
 	protected OrbMovement _orbTestMovement;
 
 	protected virtual void OnEnable()
@@ -37,6 +36,8 @@ public abstract class LegacyOrbCollider : MonoBehaviour {
 	{
 		ManagerOrb.instance.CreateSmallerOrb(toDestroy);
 		ManagerPowerUp.instance.PutRandomPowerUpInGame(toDestroy);
+		ManagerScore.instance.score = 10;
+		Debug.Log ("test");
 		toDestroy.SetActive(false);
 
 		if(collided != null)
