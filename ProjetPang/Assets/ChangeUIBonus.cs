@@ -3,46 +3,22 @@ using System.Collections;
 
 public class ChangeUIBonus : MonoBehaviour {
 
-	public Sprite[] bonusUITexture;
-
-	private SpriteRenderer _spriteRenderer;
-	private ManagerElements.Elements test;
-
-	void Awake()
-	{
-		_spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-	}
+	private int ancientIDElement;
 
 	void Update()
 	{
 		ChangeSpriteUI();
 	}
 
+
+	// Search into the sprite array, the ID of the current element to display the right element UI.
 	void ChangeSpriteUI()
 	{
-		if(ManagerElements.instance.currentElement != test)
+		if(ManagerElements.instance.IDElement != ancientIDElement)
 		{
-			switch (ManagerElements.instance.currentElement)
-			{
-				case ManagerElements.Elements.noElement:
-					_spriteRenderer.sprite = bonusUITexture[4];
-				break;
-				case ManagerElements.Elements.Fire:
-					_spriteRenderer.sprite = bonusUITexture[0];
-					break;
-				case ManagerElements.Elements.Water:
-					_spriteRenderer.sprite = bonusUITexture[1];
-					break;
-				case ManagerElements.Elements.Earth:
-					_spriteRenderer.sprite = bonusUITexture[2];
-					break;
-				case ManagerElements.Elements.Wind:
-					_spriteRenderer.sprite = bonusUITexture[3];
-					break;
-			}
-			gameObject.GetComponent<SpriteRenderer>().sprite = _spriteRenderer.sprite;
+			gameObject.GetComponent<SpriteRenderer>().sprite = ManagerArray.instance.listSpritePowerUp[ManagerElements.instance.IDElement];
+			ancientIDElement = ManagerElements.instance.IDElement;
 		}
 
-		test = ManagerElements.instance.currentElement;
 	}
 }

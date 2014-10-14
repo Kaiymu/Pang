@@ -17,13 +17,29 @@ public class ManagerPowerUp : SingleBehaviour<ManagerPowerUp> {
 	void Start()
 	{
 		CreatePoolPowerUp();
+		CreateArraySprite();
 	}
 
+	/* Put the power up into their own pool object. 
+	 */
 	void CreatePoolPowerUp()
 	{
 		_powerUpContainer = ManagerResources.instance.powerUpRessourcesContainer;
 		_listPowerUp = ManagerArray.instance.listPowerUp;
+	
 		ManagerPool.instance.CreatePool(_powerUpContainer, _listPowerUp, ammountPooledObject, _pooledParentObjectTagName);
+	}
+
+	/* Create a array of sprite, to render the good sprites in the UI. 
+	 * Put in the right orders the sprite, then automaticly gives the right sprite to the UI.
+	 */
+	void CreateArraySprite()
+	{
+		for(int i = 0; i < _powerUpContainer.transform.childCount; i++)
+		{
+			Sprite s = _powerUpContainer.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite;
+			ManagerArray.instance.listSpritePowerUp.Add(s);
+		}
 	}
 
 	public void PutRandomPowerUpInGame(GameObject _whereToInstantiate)

@@ -8,6 +8,7 @@ public class ManagerArray : SingleBehaviour<ManagerArray> {
 	private List<GameObject> _listArrow = new List<GameObject>();
 	private List<GameObject> _listOrbTaped = new List<GameObject>();
 	private List<GameObject> _listPowersUp = new List<GameObject>();
+	private List<Sprite> _listSpritePowerUp = new List<Sprite>();
 
 	public List<GameObject> listOrb
 	{
@@ -42,6 +43,16 @@ public class ManagerArray : SingleBehaviour<ManagerArray> {
 				_listPowersUp = value;
 		}
 	}
+
+	public List<Sprite> listSpritePowerUp
+	{
+		get {return _listSpritePowerUp;} 
+		set {
+			if(value != null)
+				_listSpritePowerUp = value;
+		}
+	}
+
 
 	public int countActiveInHiearchy(List<GameObject> listToCount)
 	{

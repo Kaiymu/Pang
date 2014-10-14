@@ -6,6 +6,8 @@ public class ManagerPool : SingleBehaviour<ManagerPool> {
 
 	private GameObject parentObject;
 
+	/* Takes a parent object, loops into it, retrieve all the children, give them a "group ID" and then put it into a parent pooled object.
+	 */
 	public void CreatePool(GameObject objectToPool, List<GameObject> arrayObjectPool, float amountPooled, string tagParentObject)
 	{	
 		// To get the object where the pooled object will be put. 
@@ -19,7 +21,8 @@ public class ManagerPool : SingleBehaviour<ManagerPool> {
 
 				if(parentObject != null)
 					o.transform.parent = parentObject.transform;
-
+			
+				o.AddComponent<GiveUniqueID>().ID = i;
 				arrayObjectPool.Add(o);
 			}
 		}

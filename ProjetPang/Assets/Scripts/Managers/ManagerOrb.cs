@@ -136,7 +136,6 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 
 	public void AffectOrb(GameObject orbToAffect)
 	{
-
 		switch (ManagerElements.instance.currentElement)
 		{
 			case ManagerElements.Elements.Fire:
