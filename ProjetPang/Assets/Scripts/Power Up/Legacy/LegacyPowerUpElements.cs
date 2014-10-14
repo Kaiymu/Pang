@@ -18,7 +18,7 @@ public abstract class LegacyPowerUpElements : MonoBehaviour {
 
 	protected virtual void ActiveCollisionPlayer(GameObject player)
 	{
-		ManagerElements.instance.IDElement = GetComponent<GiveUniqueID>().ID;
+		ManagerElements.instance.IDElement = GetComponent<GiveUniqueID>().IDGroup;
 	}
 
 }

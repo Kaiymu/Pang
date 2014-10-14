@@ -6,20 +6,16 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 
 	// Gère la pool d'orb
 	public float numberOrbs;
-	public float ammountPooledObject;
+	public int ammountPooledObject;
 	private string _pooledParentObjectTagName = "PooledOrb";
 
 	// Mon tableau d'orb.
 	private List<GameObject> _listOrb;
 	private GameObject _orbContainer;
 	private GameObject _orbsRessourcesContainer;
-	
-	// Get the size of the orb wich was destroyed
-	private OrbSize.Size sizeOrb;
 
-	// Retrieve a random orb from the orbContainer
-	private GameObject randomOrb;
-	
+	private int _IDGroupOrb;
+
 	void Start()
 	{
 		CreatePoolOrb();
@@ -48,93 +44,50 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 
 	public void CreateSmallerOrb(GameObject currentOrb)
 	{
-		sizeOrb = currentOrb.GetComponent<OrbSize>().sizeOrb;
-
-		if(sizeOrb == OrbSize.Size.smallSize)
+		_IDGroupOrb = currentOrb.GetComponent<GiveUniqueID>().IDGroup;
+		
+		if(currentOrb.GetComponent<GiveUniqueID>() == null || _IDGroupOrb == 3)
 			return;
 		else
+		{
 			for(int i = 0; i < numberOrbs; i++)
-			{
-				for(int j = 0; j < _listOrb.Count; j++)
+			{	
+				for(int j = 0; j < _listOrb.Count; j += ammountPooledObject)
 				{
-					if(!_listOrb[j].activeInHierarchy && _listOrb[j].gameObject.tag != "OrbDarkness")
+					if(_listOrb[j].GetComponent<GiveUniqueID>().IDGroup == _IDGroupOrb)
 					{
-						int randomNumber = Random.Range(0, _listOrb.Count);
-						randomOrb = _listOrb[randomNumber];
-
-						randomOrb.transform.position = currentOrb.transform.position;
-						randomOrb.transform.rotation = Quaternion.identity;
-
+						int nextIDGroupOrb = (_IDGroupOrb + 1 ) * ammountPooledObject;
+						GameObject nextOrbGroup = _listOrb[nextIDGroupOrb];
 						if(i == 0)
-						{
-							if(sizeOrb == OrbSize.Size.bigSize)
-							{
-								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.normalSize;
-								randomOrb.GetComponent<OrbMovement>().bouncinessY = 190;
-								randomOrb.GetComponent<OrbMovement>().bouncinessX = 110;
-								randomOrb.GetComponent<OrbMovement>().startBouciness = 110;
+							RecursifCreateBall(nextOrbGroup, nextIDGroupOrb, currentOrb, false);
 
-								randomOrb.SetActive(true);
-								break;
-							}
-
-							if(sizeOrb == OrbSize.Size.normalSize)
-							{
-								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.midSize;
-								randomOrb.GetComponent<OrbMovement>().bouncinessY = 160;
-								randomOrb.GetComponent<OrbMovement>().bouncinessX = 90; 
-								randomOrb.GetComponent<OrbMovement>().startBouciness = 90;
-								randomOrb.SetActive(true);
-								break;
-							}
-
-							if(sizeOrb == OrbSize.Size.midSize)
-							{
-								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.smallSize;
-								randomOrb.GetComponent<OrbMovement>().bouncinessY = 135;
-								randomOrb.GetComponent<OrbMovement>().bouncinessX = 75;
-								randomOrb.GetComponent<OrbMovement>().startBouciness = 75;
-								randomOrb.SetActive(true);
-								break;
-							}
-						}
 						if(i == 1)
-						{
-							if(sizeOrb == OrbSize.Size.bigSize)
-							{
-								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.normalSize;
-								randomOrb.GetComponent<OrbMovement>().bouncinessY = 190;
-								randomOrb.GetComponent<OrbMovement>().bouncinessX = 110; 
-								randomOrb.GetComponent<OrbMovement>().startBouciness = -110;
-								randomOrb.SetActive(true);
-								break;
-							}
-
-							if(sizeOrb == OrbSize.Size.normalSize)
-							{
-								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.midSize;
-								randomOrb.GetComponent<OrbMovement>().bouncinessY = 160;
-								randomOrb.GetComponent<OrbMovement>().bouncinessX = 90; 
-								randomOrb.GetComponent<OrbMovement>().startBouciness = -90; 
-								randomOrb.SetActive(true);
-								break;
-							}
-
-							if(sizeOrb == OrbSize.Size.midSize)
-							{
-								randomOrb.GetComponent<OrbSize>().sizeOrb = OrbSize.Size.smallSize;
-								randomOrb.GetComponent<OrbMovement>().bouncinessY = 135;
-								randomOrb.GetComponent<OrbMovement>().bouncinessX = 75; 
-								randomOrb.GetComponent<OrbMovement>().startBouciness = -75; 
-								randomOrb.SetActive(true);
-								break;
-							}
-						}
+							RecursifCreateBall(nextOrbGroup, nextIDGroupOrb, currentOrb, true);
 					}
 				}
 			}
+		}
 	}
+	
+	void RecursifCreateBall(GameObject orbToDisplay, int indexOrb, GameObject whereToInstantiate, bool negativeGo)
+	{
+		if(orbToDisplay.activeInHierarchy)
+		{	
+			indexOrb++;
+			orbToDisplay = _listOrb[indexOrb];
+			RecursifCreateBall(orbToDisplay, indexOrb, whereToInstantiate, negativeGo);
+		}
+		else
+		{	
+			if(negativeGo)
+				orbToDisplay.GetComponent<OrbMovement>().startBouciness = -orbToDisplay.GetComponent<OrbMovement>().startBouciness;
 
+			orbToDisplay.transform.position = whereToInstantiate.transform.position;
+			orbToDisplay.transform.rotation = Quaternion.identity;
+			orbToDisplay.SetActive(true);
+		}
+	}
+	
 	public void AffectOrb(GameObject orbToAffect)
 	{
 		switch (ManagerElements.instance.currentElement)

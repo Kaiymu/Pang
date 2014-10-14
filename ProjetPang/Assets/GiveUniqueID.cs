@@ -3,12 +3,12 @@ using System.Collections;
 
 public class GiveUniqueID : MonoBehaviour {
 
-	private int _ID;
+	public int _IDGroup;
 
-	public int ID
+	public int IDGroup
 	{
-		get{return _ID;}
+		get{return _IDGroup;}
 		set{if(value != null)
-			_ID = value;}
+			_IDGroup = value;}
 	}
 }

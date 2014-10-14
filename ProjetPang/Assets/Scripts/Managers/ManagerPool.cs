@@ -22,7 +22,7 @@ public class ManagerPool : SingleBehaviour<ManagerPool> {
 				if(parentObject != null)
 					o.transform.parent = parentObject.transform;
 			
-				o.AddComponent<GiveUniqueID>().ID = i;
+				o.AddComponent<GiveUniqueID>().IDGroup = i;
 				arrayObjectPool.Add(o);
 			}
 		}

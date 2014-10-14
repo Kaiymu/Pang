@@ -35,12 +35,12 @@ public abstract class LegacyOrbCollider : MonoBehaviour {
 	public virtual void DestroyOrb(GameObject toDestroy, GameObject collided)
 	{
 		ManagerOrb.instance.CreateSmallerOrb(toDestroy);
-		ManagerPowerUp.instance.PutRandomPowerUpInGame(toDestroy);
 		ManagerScore.instance.score = 10;
-		Debug.Log ("test");
 		toDestroy.SetActive(false);
 
 		if(collided != null)
 			collided.SetActive(false);
+
+		ManagerPowerUp.instance.PutRandomPowerUpInGame(toDestroy);
 	}
 }
