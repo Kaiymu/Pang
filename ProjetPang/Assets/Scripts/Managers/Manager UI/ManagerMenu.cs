@@ -54,7 +54,6 @@ public class ManagerMenu : MonoBehaviour {
 			//Game is paused
 			if(Time.timeScale != 0){
 				Time.timeScale = 0;
-				Debug.Log(_elementMenuToShow.transform.childCount);
 				for(int i = 0; i < _elementMenuToShow.transform.childCount; i++)
 				{
 					_elementMenuToShow.transform.GetChild(i).gameObject.SetActive(true);

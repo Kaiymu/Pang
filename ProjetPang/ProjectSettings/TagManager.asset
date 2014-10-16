@@ -18,6 +18,7 @@ TagManager:
   - PooledPowerUp
   - ManagerMenu
   - OrbMalusTaped
+  - Joystick
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

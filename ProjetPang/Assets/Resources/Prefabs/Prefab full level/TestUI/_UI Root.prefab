@@ -260,8 +260,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 400030}
   - 114: {fileID: 11400126}
-  - 114: {fileID: 11400124}
   - 65: {fileID: 6500024}
+  - 114: {fileID: 11400124}
   m_Layer: 15
   m_Name: Score
   m_TagString: Untagged

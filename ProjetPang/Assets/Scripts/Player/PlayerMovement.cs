@@ -25,9 +25,10 @@ public class PlayerMovement : MonoBehaviour {
 
 	// When the game is "paused" because of the time power
 	private bool _canWalk = true;
-	public CNAbstractController MovementJoystick;
+	private CNJoystick _MovementJoystick;
 
 	void Start() {
+		_MovementJoystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<CNJoystick>();
 		anim = GetComponent<Animator>();
 	}
 
@@ -41,9 +42,9 @@ public class PlayerMovement : MonoBehaviour {
 		//Debug.Log (MovementJoystick.GetAxis("Horizontal"));
 		_velocity = new Vector2(speed, 0);
 
-		this.transform.Translate(MovementJoystick.GetAxis("Horizontal") * _velocity * Time.deltaTime);
+		this.transform.Translate(_MovementJoystick.GetAxis("Horizontal") * _velocity * Time.deltaTime);
 
-		if(ManagerInput.instance.isMovingLeft() || MovementJoystick.GetAxis("Horizontal") < 0)
+		if(ManagerInput.instance.isMovingLeft() || _MovementJoystick.GetAxis("Horizontal") < 0)
 		{
 			this.transform.Translate(-_velocity * Time.deltaTime);
 			_walkLeft = true;
@@ -53,7 +54,7 @@ public class PlayerMovement : MonoBehaviour {
 		else
 			_walkLeft = false;
 
-		if(ManagerInput.instance.isMovingRight() || MovementJoystick.GetAxis("Horizontal") > 0)
+		if(ManagerInput.instance.isMovingRight() || _MovementJoystick.GetAxis("Horizontal") > 0)
 		{
 			this.transform.Translate(_velocity * Time.deltaTime);
 			_walkRight = true;

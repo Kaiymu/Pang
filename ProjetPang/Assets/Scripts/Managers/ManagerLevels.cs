@@ -6,7 +6,14 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 	public string ListLevelSceneName;
 
 	private float currentLevel;
+	private string _additiveLevelToLoad;
 	// Use this for initialization
+
+	public string additiveLevelToLoad
+	{
+		get{return _additiveLevelToLoad;}
+		set{_additiveLevelToLoad = value;}
+	}
 
 	void Awake()
 	{
@@ -30,7 +37,8 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 	void GoToLevel(GameObject gameObjectLevel)
 	{
 		Time.timeScale = 1;
-		Application.LoadLevel(gameObjectLevel.name);
+		_additiveLevelToLoad = gameObjectLevel.name;
+		Application.LoadLevel("AdditifRegroupLevels");
 	}
 
 	void QuitGame()

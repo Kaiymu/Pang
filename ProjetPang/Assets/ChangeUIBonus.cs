@@ -9,7 +9,6 @@ public class ChangeUIBonus : MonoBehaviour {
 	void Start()
 	{
 		_spriteUI = gameObject.GetComponent<SpriteRenderer>();
-		_spriteUI.sprite = ManagerArray.instance.listSpritePowerUp[0];
 	}
 
 	void Update()
@@ -25,6 +24,5 @@ public class ChangeUIBonus : MonoBehaviour {
 			_spriteUI.sprite = ManagerArray.instance.listSpritePowerUp[ManagerElements.instance.IDElement];
 			ancientIDElement = ManagerElements.instance.IDElement;
 		}
-
 	}
 }
