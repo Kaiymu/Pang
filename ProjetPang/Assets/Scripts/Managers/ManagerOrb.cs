@@ -19,19 +19,6 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 	void Start()
 	{
 		CreatePoolOrb();
-		ActiveOrb();
-	}
-
-	// Retrieve and activate the starting orbs on the current map.
-	void ActiveOrb()
-	{
-		_orbContainer = GameObject.FindGameObjectWithTag("OrbContainer");
-		
-		if(_orbContainer != null)
-		{
-			for(int i = 0; i < _orbContainer.transform.childCount; i++)
-				_orbContainer.transform.GetChild(i).gameObject.SetActive(true);
-		}
 	}
 
 	// Create the pull object for the orbs.

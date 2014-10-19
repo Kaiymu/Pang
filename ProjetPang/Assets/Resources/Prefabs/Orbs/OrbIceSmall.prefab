@@ -312,9 +312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92307b558909b043b0834642bcc8db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bouncinessY: 220
-  bouncinessX: 125
-  startBouciness: 125
+  bouncinessY: 140
+  bouncinessX: 70
+  startBouciness: 70
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b789558eb400f4fb6f741cabf77fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeOrb: 0
+  sizeOrb: 3
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1

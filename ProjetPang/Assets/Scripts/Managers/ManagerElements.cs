@@ -7,7 +7,7 @@ public class ManagerElements : SingleBehaviour<ManagerElements> {
 	public Elements currentElement;
 
 	private int _IDElement;
-	
+
 	public int IDElement
 	{
 		get{return _IDElement;}

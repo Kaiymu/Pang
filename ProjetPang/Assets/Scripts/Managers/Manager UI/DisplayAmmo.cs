@@ -7,7 +7,7 @@ public class DisplayAmmo : MonoBehaviour {
 	private GameObject[] _displayArrayTripleArrow;
 	
 	private PlayerShoot _ammo;
-	private GiveAllObjectsToManagers _giveAllObjectsToManagers;
+	//private GiveAllObjectsToManagers _giveAllObjectsToManagers;
 
 	private bool _isInMenu;
 
@@ -15,11 +15,11 @@ public class DisplayAmmo : MonoBehaviour {
 	{
 		//PlayerShoot.isChangingArrow += ChangingArrow;
 	
-		_giveAllObjectsToManagers = GameObject.FindGameObjectWithTag("GiveAllObjectsToManagers").GetComponent<GiveAllObjectsToManagers>();
-		_displayArrayHook = this.GetComponent<SortGameObjectsChildrenByName>().sortArrayFromName(_giveAllObjectsToManagers.UIArrayArrowHook);
-		_displayArrayTripleArrow = this.GetComponent<SortGameObjectsChildrenByName>().sortArrayFromName(_giveAllObjectsToManagers.UIArrayArrowTriple);
+		//_giveAllObjectsToManagers = GameObject.FindGameObjectWithTag("GiveAllObjectsToManagers").GetComponent<GiveAllObjectsToManagers>();
+		//_displayArrayHook = this.GetComponent<SortGameObjectsChildrenByName>().sortArrayFromName(_giveAllObjectsToManagers.UIArrayArrowHook);
+		//_displayArrayTripleArrow = this.GetComponent<SortGameObjectsChildrenByName>().sortArrayFromName(_giveAllObjectsToManagers.UIArrayArrowTriple);
 
-		_ammo = _giveAllObjectsToManagers.player.GetComponent<PlayerShoot>();
+		//_ammo = _giveAllObjectsToManagers.player.GetComponent<PlayerShoot>();
 		
 		for(int i = 0; i < _displayArrayHook.Length; i++)
 		{

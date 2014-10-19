@@ -15,7 +15,7 @@ public class ManagerMenu : MonoBehaviour {
 	private bool _displayMenuOnce;
 
 	private ManagerArray _managerArray;
-	private GiveAllObjectsToManagers _giveAllObjectsToManagers;
+	//private GiveAllObjectsToManagers _giveAllObjectsToManagers;
 	private ManagerInput _managerInput;
 
 	private bool _isOnGame = false;
@@ -29,12 +29,12 @@ public class ManagerMenu : MonoBehaviour {
 	{
 		_managerArray = this.GetComponent<ManagerArray>();
 		_managerInput = ManagerInput.instance;
-		_giveAllObjectsToManagers = GameObject.FindGameObjectWithTag("GiveAllObjectsToManagers").GetComponent<GiveAllObjectsToManagers>();
+		//_giveAllObjectsToManagers = GameObject.FindGameObjectWithTag("GiveAllObjectsToManagers").GetComponent<GiveAllObjectsToManagers>();
 
-		_player = _giveAllObjectsToManagers.player;
-		_elementMenuToShow = _giveAllObjectsToManagers.menuGame;
-		_elementGameOverToShow = _giveAllObjectsToManagers.menuLoose;
-		_elementWinToShow = _giveAllObjectsToManagers.menuWin;
+		//_player = _giveAllObjectsToManagers.player;
+		//_elementMenuToShow = _giveAllObjectsToManagers.menuGame;
+		//_elementGameOverToShow = _giveAllObjectsToManagers.menuLoose;
+		//_elementWinToShow = _giveAllObjectsToManagers.menuWin;
 
 		_displayMenuOnce = true;
 		_canPause = true;
