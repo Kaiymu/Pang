@@ -36,7 +36,9 @@ public abstract class LegacyOrbCollider : MonoBehaviour {
 	{
 		ManagerOrb.instance.CreateSmallerOrb(toDestroy);
 		ManagerScore.instance.score = 10;
+		ManagerScore.instance.Combo();
 		toDestroy.SetActive(false);
+
 
 		if(collided != null)
 			collided.SetActive(false);

@@ -11,7 +11,6 @@ public class LoadLevelAdditif : MonoBehaviour {
 	}
 	
 	IEnumerator Start() {
-		Debug.Log ("toto");
 		AsyncOperation asyncManagersScene = Application.LoadLevelAdditiveAsync("ManagersScene");
 		AsyncOperation asyncUIScene = Application.LoadLevelAdditiveAsync("AdditifLevelUI");
 		AsyncOperation asyncGameScene = Application.LoadLevelAdditiveAsync(nameLevelToDownLoad);
