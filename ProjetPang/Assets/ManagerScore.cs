@@ -25,10 +25,10 @@ public class ManagerScore : SingleBehaviour<ManagerScore> {
 	{
 		combo++;
 		CancelInvoke();
-		Invoke ("Test", 1);
+		Invoke ("ResetCombo", 1);
 	}
 
-	void Test()
+	void ResetCombo()
 	{
 		score = combo * 10;
 		combo = 0;

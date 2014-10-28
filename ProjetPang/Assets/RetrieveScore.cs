@@ -1,19 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RetrieveScore : MonoBehaviour {
+public class RetrieveScore : RetrieveInfosLegacy {
 
-	private UILabel _scoreLabel;
-
-	void Start () {
-		_scoreLabel = this.GetComponent<UILabel>();
-	}
-
-	void Update () {
-		GiveScore ();
-	}
-
-	void GiveScore(){
-		_scoreLabel.text = ManagerScore.instance.score.ToString();
+	protected override void GiveInfos(){
+		_infoLabel.text = ManagerScore.instance.score.ToString();
 	}
 }
