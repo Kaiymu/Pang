@@ -2,12 +2,12 @@
 <SaveScoreXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <score>
     <int>200</int>
-    <int>400</int>
-    <int>700</int>
+    <int>0</int>
+    <int>0</int>
   </score>
   <levels>
     <int>1</int>
-    <int>2</int>
-    <int>3</int>
+    <int>0</int>
+    <int>0</int>
   </levels>
 </SaveScoreXML>

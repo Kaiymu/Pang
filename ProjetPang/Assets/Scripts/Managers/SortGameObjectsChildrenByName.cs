@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Linq;
 
-public class SortGameObjectsChildrenByName : MonoBehaviour {
+public class SortGameObjectsChildrenByName : SingleBehaviour<SortGameObjectsChildrenByName> {
 
 	/* Take a gameobejct with children in parameters, and sort them by their name */
 	public GameObject[] sortArrayFromName(GameObject childArrayToSort)
