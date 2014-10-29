@@ -16,6 +16,26 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 
 	private int _IDGroupOrb;
 
+	void OnEnable()
+	{
+		LoadLevelAdditif.Loaded += LevelIsLoaded;
+	}
+
+	void OnDisable()
+	{
+		LoadLevelAdditif.Loaded -= LevelIsLoaded;
+	}
+
+	void LevelIsLoaded()
+	{
+		GameObject[] g = GameObject.FindGameObjectsWithTag("OrbIce");
+
+		foreach(GameObject orb in g)
+		{
+			ManagerArray.instance.listOrbInGame.Add(orb);
+		}
+	}
+
 	void Start()
 	{
 		CreatePoolOrb();
@@ -45,6 +65,7 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 					{
 						int nextIDGroupOrb = (_IDGroupOrb + 1 ) * ammountPooledObject;
 						GameObject nextOrbGroup = _listOrb[nextIDGroupOrb];
+
 						if(i == 0)
 							RecursifCreateBall(nextOrbGroup, nextIDGroupOrb, currentOrb, false);
 

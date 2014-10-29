@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class ManagerArray : SingleBehaviour<ManagerArray> {
 
 	private List<GameObject> _listOrb = new List<GameObject>();
+	private List<GameObject> _listOrbInGame = new List<GameObject>();
+
 	private List<GameObject> _listArrow = new List<GameObject>();
 	private List<GameObject> _listOrbTaped = new List<GameObject>();
 	private List<GameObject> _listPowersUp = new List<GameObject>();
@@ -15,6 +17,14 @@ public class ManagerArray : SingleBehaviour<ManagerArray> {
 		get {return _listOrb;} 
 		set {if(value != null)
 				_listOrb = value;
+		}
+	}
+
+	public List<GameObject> listOrbInGame
+	{
+		get {return _listOrbInGame;} 
+		set {if(value != null)
+			_listOrbInGame = value;
 		}
 	}
 
@@ -52,7 +62,6 @@ public class ManagerArray : SingleBehaviour<ManagerArray> {
 				_listSpritePowerUp = value;
 		}
 	}
-
 
 	public int countActiveInHiearchy(List<GameObject> listToCount)
 	{

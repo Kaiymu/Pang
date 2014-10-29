@@ -20,6 +20,7 @@ TagManager:
   - OrbMalusTaped
   - Joystick
   - ListLevels
+  - CurrentLevel
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
