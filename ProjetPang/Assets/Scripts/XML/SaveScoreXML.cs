@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ScoreXML : SingleBehaviour<ScoreXML> {
+public class SaveScoreXML : SingleBehaviour<SaveScoreXML> {
 
-	private SaveScoreXML _memory;
+	private XMLScore _memory;
 
-	public SaveScoreXML memory
+	public XMLScore memory
 	{
 		get{return _memory;}
 		set{_memory = value;}
@@ -19,14 +19,12 @@ public class ScoreXML : SingleBehaviour<ScoreXML> {
 	void Awake()
 	{
 		DontDestroyOnLoad (transform.gameObject);
-		memory = SaveScoreXML.Load(Application.dataPath + "/Save.xml");
+		memory = XMLScore.Load(Application.dataPath + "/Save.xml");
 
 		if(memory == null)
 		{
-			memory = new SaveScoreXML();
-
-			memory.score[0] = 0;
-			memory.levels[0] = 1;
+			memory = new XMLScore();
+		
 
 			memory.Save(Application.dataPath + "/Save.xml");
 		}

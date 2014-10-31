@@ -94,11 +94,11 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 	// If the player as already save a number of level, we retrieve this number to know how much levels we can display.
 	void HideNonAccessibleLevels()
 	{
-		for(int i = 0; i < ScoreXML.instance.memory.levels.Length; i++)
+		for(int i = 0; i < SaveScoreXML.instance.memory.levels.Length; i++)
 		{
-			if(ScoreXML.instance.memory.levels[i] != 0)
+			if(SaveScoreXML.instance.memory.levels[i] != 0)
 			{
-				_numberLevelAccessible = ScoreXML.instance.memory.levels[i];
+				_numberLevelAccessible = SaveScoreXML.instance.memory.levels[i];
 			}
 		}
 		
