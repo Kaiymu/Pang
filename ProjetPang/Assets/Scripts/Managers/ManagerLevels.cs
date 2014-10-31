@@ -74,6 +74,7 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 	void LevelIsLoaded()
 	{
 		if(_level == 3){
+			_temporaryLevelsList.Clear();
 			string o = GameObject.FindGameObjectWithTag("CurrentLevel").gameObject.name;
 		}
 	}
@@ -101,8 +102,9 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 				_numberLevelAccessible = SaveScoreXML.instance.memory.levels[i];
 			}
 		}
-		
-		for(int i = _temporaryLevelsList.Count - 1; i > _numberLevelAccessible; i--)
+
+		Debug.Log (_numberLevelAccessible);
+		for(int i = _temporaryLevelsList.Count - 1; i > _numberLevelAccessible -1 ; i--)
 		{
 			_temporaryLevelsList[i].SetActive(false);
 		}

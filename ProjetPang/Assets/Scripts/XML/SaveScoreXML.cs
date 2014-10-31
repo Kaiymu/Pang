@@ -24,16 +24,15 @@ public class SaveScoreXML : SingleBehaviour<SaveScoreXML> {
 		if(memory == null)
 		{
 			memory = new XMLScore();
-		
-
+			memory.levels[0] = 1;
 			memory.Save(Application.dataPath + "/Save.xml");
 		}
 	}
 
 	void SaveScore()
 	{
-		int arrayXMLUpdateScoreLevels = ManagerLevels.instance.level - 2;
-	
+		int arrayXMLUpdateScoreLevels = ManagerLevels.instance.level - 3;
+
 		if(memory.score[arrayXMLUpdateScoreLevels] < ManagerScore.instance.score)
 			memory.score[arrayXMLUpdateScoreLevels] = ManagerScore.instance.score;
 
