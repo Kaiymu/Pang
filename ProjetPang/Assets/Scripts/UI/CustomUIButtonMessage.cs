@@ -36,6 +36,7 @@ public class CustomUIButtonMessage : MonoBehaviour
 	
 	void Start () { mStarted = true; 
 		target = GameObject.FindGameObjectWithTag(targetTagName.ToString());
+		Debug.Log (target);
 	}
 	
 	void OnEnable () { if (mStarted) OnHover(UICamera.IsHighlighted(gameObject)); }
@@ -85,7 +86,6 @@ public class CustomUIButtonMessage : MonoBehaviour
 		}
 		else
 		{
-
 			target.SendMessage(functionName, gameObject, SendMessageOptions.DontRequireReceiver);
 		}
 	}

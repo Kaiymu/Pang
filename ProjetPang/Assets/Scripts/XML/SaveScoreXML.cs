@@ -23,7 +23,6 @@ public class SaveScoreXML : SingleBehaviour<SaveScoreXML> {
 		DontDestroyOnLoad (transform.gameObject);
 		memory = XMLScore.Load(LoadXMLFile());
 
-		Debug.Log (memory);
 		if(memory == null)
 		{
 			memory = new XMLScore();

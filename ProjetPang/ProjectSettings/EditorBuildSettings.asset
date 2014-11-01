@@ -6,16 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/ManagersMainMenu.unity
+  - enabled: 1
     path: Assets/Scenes/UI/MainMenu.unity
   - enabled: 1
     path: Assets/Scenes/UI/ListLevels.unity
   - enabled: 1
-    path: Assets/Scenes/ManagersScene.unity
+    path: Assets/Scenes/AdditifLevelLoaded/AdditifRegroupLevels.unity
   - enabled: 1
-    path: Assets/Scenes/AdditifRegroupLevels.unity
+    path: Assets/Scenes/AdditifLevelLoaded/ManagersScene.unity
+  - enabled: 1
+    path: Assets/Scenes/UI/AdditifLevelUI.unity
   - enabled: 1
     path: Assets/Scenes/Levels/1_Level.unity
   - enabled: 1
     path: Assets/Scenes/Levels/2_Level.unity
-  - enabled: 1
-    path: Assets/Scenes/UI/AdditifLevelUI.unity

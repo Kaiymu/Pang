@@ -27,7 +27,6 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 		set{_level = value;}
 	}
 
-
 	void Awake(){
 		DontDestroyOnLoad (transform.gameObject);
 	}
@@ -64,7 +63,7 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 		//If the list levels is loaded, then we get all the levels container.
 		// I put the level in a private to access is asyncronosly in the LevelIsloaded
 		level = levelLoaded;
-		if (level == 1)
+		if (level == 2)
 		{
 			_retrieveAllLevels = GameObject.FindGameObjectsWithTag("ListLevels");
 			CreateTemporyArrayLevelsGameobjects();
@@ -103,7 +102,6 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 			}
 		}
 
-		Debug.Log (_numberLevelAccessible);
 		for(int i = _temporaryLevelsList.Count - 1; i > _numberLevelAccessible -1 ; i--)
 		{
 			_temporaryLevelsList[i].SetActive(false);

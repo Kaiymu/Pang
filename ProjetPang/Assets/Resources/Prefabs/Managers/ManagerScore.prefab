@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: GiveAllObjectsToManagers
-  m_TagString: GiveAllObjectsToManagers
+  m_Name: ManagerScore
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23,10 +23,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -.184113562, y: -1.91513884, z: -4.76837158e-07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -35,26 +36,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b5602525553b454084cf62797963e5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d550e97d713f8b48964cf9efcf5b87f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  phoneButtonsToHide:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  arrayOrbsStart: {fileID: 0}
-  poolOrbs: {fileID: 100014, guid: 4a48e00eb90d5aa4391bccb802186565, type: 2}
-  menuGame: {fileID: 0}
-  menuLoose: {fileID: 0}
-  menuWin: {fileID: 0}
-  walls: {fileID: 0}
-  UIArrayArrowHook: {fileID: 0}
-  UIArrayArrowTriple: {fileID: 0}
-  powerUpContainer: {fileID: 100006, guid: a6e59ba027b86b54a8b2a61e2da189a1, type: 2}
-  showCurrentAmmo: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
