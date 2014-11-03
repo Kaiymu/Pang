@@ -10,9 +10,29 @@ public class ManagerPowerUp : SingleBehaviour<ManagerPowerUp> {
 
 	private string _pooledParentObjectTagName = "PooledPowerUp";
 	private GameObject _powerUpContainer;
-	private List<GameObject> _listPowerUp;
+
+	private List<GameObject> _listPowerUp = new List<GameObject>();
+	private List<Sprite> _listSpritePowerUp = new List<Sprite>();
 	
 	private float _randomNumber;
+
+	public List<GameObject> listPowerUp
+	{
+		get {return _listPowerUp;} 
+		set {
+			if(value != null)
+				_listPowerUp = value;
+		}
+	}
+	
+	public List<Sprite> listSpritePowerUp
+	{
+		get {return _listSpritePowerUp;} 
+		set {
+			if(value != null)
+				_listSpritePowerUp = value;
+		}
+	}
 
 	void Start()
 	{
@@ -25,8 +45,6 @@ public class ManagerPowerUp : SingleBehaviour<ManagerPowerUp> {
 	void CreatePoolPowerUp()
 	{
 		_powerUpContainer = ManagerResources.instance.powerUpRessourcesContainer;
-		_listPowerUp = ManagerArray.instance.listPowerUp;
-	
 		ManagerPool.instance.CreatePool(_powerUpContainer, _listPowerUp, ammountPooledObject, _pooledParentObjectTagName);
 	}
 
@@ -38,7 +56,7 @@ public class ManagerPowerUp : SingleBehaviour<ManagerPowerUp> {
 		for(int i = 0; i < _powerUpContainer.transform.childCount; i++)
 		{
 			Sprite s = _powerUpContainer.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite;
-			ManagerArray.instance.listSpritePowerUp.Add(s);
+			listSpritePowerUp.Add(s);
 		}
 	}
 
@@ -53,13 +71,13 @@ public class ManagerPowerUp : SingleBehaviour<ManagerPowerUp> {
 				float s = 0;
 				_randomNumber = Random.Range(0f, 1f);
 
-				for(int i = 0; i < ManagerArray.instance.listPowerUp.Count; i += ammountPooledObject)
+				for(int i = 0; i < listPowerUp.Count; i += ammountPooledObject)
 				{
-					s += ManagerArray.instance.listPowerUp[i].GetComponent<PowerUpChanceSpawn>().chanceToSpawn;
+					s += listPowerUp[i].GetComponent<PowerUpChanceSpawn>().chanceToSpawn;
 
 					if(_randomNumber < s)
 					{
-						GameObject _randomPowerUp = ManagerArray.instance.listPowerUp[i];
+						GameObject _randomPowerUp = listPowerUp[i];
 						if(!_randomPowerUp.activeInHierarchy)
 						{
 							_randomPowerUp.transform.position = _whereToInstantiate.transform.position;

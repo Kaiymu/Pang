@@ -38,8 +38,6 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Movement()
 	{	
-
-		//Debug.Log (MovementJoystick.GetAxis("Horizontal"));
 		_velocity = new Vector2(speed, 0);
 
 		this.transform.Translate(_MovementJoystick.GetAxis("Horizontal") * _velocity * Time.deltaTime);

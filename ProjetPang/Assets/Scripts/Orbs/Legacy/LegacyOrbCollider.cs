@@ -3,11 +3,11 @@ using System.Collections;
 
 public abstract class LegacyOrbCollider : MonoBehaviour {
 	
-	protected OrbMovement _orbTestMovement;
+	protected OrbMovement _orbMovement;
 
 	protected virtual void OnEnable()
 	{
-		_orbTestMovement = GetComponent<OrbMovement>();
+		_orbMovement = GetComponent<OrbMovement>();
 	}
 	
 	protected virtual void OnCollisionEnter2D(Collision2D col)
@@ -23,7 +23,7 @@ public abstract class LegacyOrbCollider : MonoBehaviour {
 	protected virtual void WallCollision(string wallName)
 	{
 		if(wallName == "2_LeftWall" || wallName ==  "3_RightWall" || wallName == "1_BottomWall")
-			_orbTestMovement.MovementWall(wallName);
+			_orbMovement.MovementWall(wallName);
 	}
 	
 	protected virtual void ArrowCollision(string tag, GameObject collided)
@@ -38,7 +38,6 @@ public abstract class LegacyOrbCollider : MonoBehaviour {
 		ManagerScore.instance.score = 10;
 		ManagerScore.instance.Combo();
 		toDestroy.SetActive(false);
-
 
 		if(collided != null)
 			collided.SetActive(false);

@@ -15,7 +15,6 @@ public class PlayerShoot : MonoBehaviour {
 	//Current position of the ammo in the array.
 	private int _currentPosArray = 0;
 	private Animator anim;
-	private float timeShoot = 0f;
 	private int _numberArrowOnGame;
 	private  List<GameObject> _arrows = new List<GameObject>();
 
@@ -35,22 +34,18 @@ public class PlayerShoot : MonoBehaviour {
 
 	void Start()
 	{
-		_arrows = ManagerArray.instance.listArrow;
+		_arrows = ManagerArrow.instance.listArrow;
 	}
 
 	// I create a new one each time that the player can shoot.
-	void Update()
-	{
-
+	void Update(){
 		CanShoot();
 	}
 
 	void CanShoot()
 	{
 		// To know when the player can shoot.
-		timeShoot += Time.deltaTime;
-		
-		if(ManagerArray.instance.countActiveInHiearchy(ManagerArray.instance.listArrow) <= _numberArrowOnGame)
+		if(ManagerPool.instance.countActiveInHiearchy(ManagerArrow.instance.listArrow) <= _numberArrowOnGame)
 		{
 			if(ManagerInput.instance.isShooting()) // If i press the buttons to shoot
 				Shoot();

@@ -21,7 +21,7 @@ public class ChangeUIBonus : MonoBehaviour {
 	{
 		if(ManagerElements.instance.IDElement != ancientIDElement)
 		{
-			_spriteUI.sprite = ManagerArray.instance.listSpritePowerUp[ManagerElements.instance.IDElement];
+			_spriteUI.sprite = ManagerPowerUp.instance.listSpritePowerUp[ManagerElements.instance.IDElement];
 			ancientIDElement = ManagerElements.instance.IDElement;
 		}
 	}

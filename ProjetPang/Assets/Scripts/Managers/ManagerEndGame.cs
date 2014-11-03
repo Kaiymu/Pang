@@ -4,7 +4,8 @@ using System.Collections;
 public class ManagerEndGame : SingleBehaviour<ManagerEndGame> {
 
 	private bool _isLevelLoaded;
-	private ManagerArray _managerArray;
+	private ManagerOrb _managerOrb;
+	private ManagerPool _managerPool;
 	public delegate void EndGame();
 	public static event EndGame OnEndGame;
 
@@ -16,14 +17,15 @@ public class ManagerEndGame : SingleBehaviour<ManagerEndGame> {
 	void Loaded()
 	{
 		_isLevelLoaded = true;
-		_managerArray = ManagerArray.instance;
+		_managerOrb = ManagerOrb.instance;
+		_managerPool = ManagerPool.instance;
 	}
 
 	void Update()
 	{
 		if(_isLevelLoaded)
 		{
-			if(_managerArray.countActiveInHiearchy(_managerArray.listOrb) == 0 && _managerArray.countActiveInHiearchy(_managerArray.listOrbInGame) == 0)
+			if(_managerPool.countActiveInHiearchy(_managerOrb.listOrb) == 0 && _managerPool.countActiveInHiearchy(_managerOrb.listOrbInGame) == 0)
 				OnEndGame();
 		}
 	}

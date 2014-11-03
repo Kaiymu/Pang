@@ -4,14 +4,23 @@ using System.Collections.Generic;
 
 public class ManagerPool : SingleBehaviour<ManagerPool> {
 
-	private GameObject parentObject;
+	public int countActiveInHiearchy(List<GameObject> listToCount)
+	{
+		int numberActiveHiearchy = 0;
+		for(int i = 0; i < listToCount.Count; i++)
+		{
+			if(listToCount[i].activeInHierarchy)
+				numberActiveHiearchy++;
+		}
+		return numberActiveHiearchy;
+	}
 
 	/* Takes a parent object, loops into it, retrieve all the children, give them a "group ID" and then put it into a parent pooled object.
 	 */
 	public void CreatePool(GameObject objectToPool, List<GameObject> arrayObjectPool, float amountPooled, string tagParentObject)
 	{	
 		// To get the object where the pooled object will be put. 
-		parentObject = GameObject.FindGameObjectWithTag(tagParentObject);
+		GameObject parentObject = GameObject.FindGameObjectWithTag(tagParentObject);
 
 		for(int i = 0; i < objectToPool.transform.childCount; i++)
 		{

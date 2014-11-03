@@ -9,12 +9,30 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 	public int ammountPooledObject;
 	private string _pooledParentObjectTagName = "PooledOrb";
 
+	private List<GameObject> _listOrb = new List<GameObject>();
+	private List<GameObject> _listOrbInGame = new List<GameObject>();
+
 	// Mon tableau d'orb.
-	private List<GameObject> _listOrb;
 	private GameObject _orbContainer;
 	private GameObject _orbsRessourcesContainer;
 
 	private int _IDGroupOrb;
+
+	public List<GameObject> listOrb
+	{
+		get {return _listOrb;} 
+		set {if(value != null)
+			_listOrb = value;
+		}
+	}
+	
+	public List<GameObject> listOrbInGame
+	{
+		get {return _listOrbInGame;} 
+		set {if(value != null)
+			_listOrbInGame = value;
+		}
+	}
 
 	void OnEnable()
 	{
@@ -23,7 +41,7 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 
 	void OnDisable()
 	{
-		LoadLevelAdditif.Loaded -= LevelIsLoaded;
+		LoadLevelAdditif.Loaded-= LevelIsLoaded;
 	}
 
 	void LevelIsLoaded()
@@ -32,7 +50,7 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 
 		foreach(GameObject orb in g)
 		{
-			ManagerArray.instance.listOrbInGame.Add(orb);
+			listOrbInGame.Add(orb);
 		}
 	}
 
@@ -45,7 +63,6 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 	void CreatePoolOrb()
 	{	
 		_orbContainer = ManagerResources.instance.orbRessourceContainer;
-		_listOrb = ManagerArray.instance.listOrb;
 		ManagerPool.instance.CreatePool(_orbContainer, _listOrb, ammountPooledObject, _pooledParentObjectTagName);
 	}
 

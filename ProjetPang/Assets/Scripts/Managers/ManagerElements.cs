@@ -14,5 +14,4 @@ public class ManagerElements : SingleBehaviour<ManagerElements> {
 		set{if(value != null)
 			_IDElement = value;}
 	}
-
 }

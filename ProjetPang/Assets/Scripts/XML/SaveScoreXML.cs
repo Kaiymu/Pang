@@ -23,12 +23,14 @@ public class SaveScoreXML : SingleBehaviour<SaveScoreXML> {
 		DontDestroyOnLoad (transform.gameObject);
 		memory = XMLScore.Load(LoadXMLFile());
 
+		/*
 		if(memory == null)
 		{
 			memory = new XMLScore();
 			memory.levels[0] = 1;
 			memory.Save(Application.dataPath + "/Save.xml");
 		}
+		*/
 	}
 
 	string LoadXMLFile()
@@ -61,6 +63,7 @@ public class SaveScoreXML : SingleBehaviour<SaveScoreXML> {
 
 	void SaveScore()
 	{
+		Debug.Log ("toto");
 		int arrayXMLUpdateScoreLevels = ManagerLevels.instance.level - 3;
 
 		if(memory.score[arrayXMLUpdateScoreLevels] < ManagerScore.instance.score)

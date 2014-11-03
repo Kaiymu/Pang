@@ -17,6 +17,17 @@ public class ManagerTouchTap : MonoBehaviour {
 	private bool _pauseToTap = false;
 	public int timeStopPause = 0;
 
+	private List<GameObject> _listOrbTaped = new List<GameObject>();
+	
+	public List<GameObject> listOrbTaped
+	{
+		get {return _listOrbTaped;} 
+		set {
+			if(value != null)
+				_listOrbTaped = value;
+		}
+	}
+
 	void Update () {
 
 		PausingToTap();
@@ -58,10 +69,10 @@ public class ManagerTouchTap : MonoBehaviour {
 		for(int i = 0; i < _hit.Length; i++)
 		{
 			if(_hit[i].collider.tag == "OrbIce" || _hit[i].collider.tag == "OrbDarkness" || _hit[i].collider.tag == "OrbMalusTaped"){
-				if(!ManagerArray.instance.listOrbTaped.Contains(_hit[i].collider.gameObject))
+				if(!listOrbTaped.Contains(_hit[i].collider.gameObject))
 				{
 					_hit[i].collider.renderer.material.color = Color.red;
-					ManagerArray.instance.listOrbTaped.Add(_hit[i].collider.gameObject);
+					listOrbTaped.Add(_hit[i].collider.gameObject);
 				}
 			}
 		}
@@ -70,14 +81,14 @@ public class ManagerTouchTap : MonoBehaviour {
 	// Call the tap action method on each balls that was stored on the temporary List after the pause
 	void ActionOnTapedObject()
 	{
-		if(ManagerArray.instance.listOrbTaped.Count != 0)
+		if(listOrbTaped.Count != 0)
 		{
-			for(int i = 0; i < ManagerArray.instance.listOrbTaped.Count; i++)
+			for(int i = 0; i < listOrbTaped.Count; i++)
 			{
-				if(ManagerArray.instance.listOrbTaped[i].activeInHierarchy)
-					ManagerOrb.instance.AffectOrb(ManagerArray.instance.listOrbTaped[i]);
+				if(listOrbTaped[i].activeInHierarchy)
+					ManagerOrb.instance.AffectOrb(listOrbTaped[i]);
 			}
-			ManagerArray.instance.listOrbTaped.Clear();
+			listOrbTaped.Clear();
 		}
 	}
 }

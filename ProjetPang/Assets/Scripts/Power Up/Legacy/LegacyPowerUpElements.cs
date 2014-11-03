@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class LegacyPowerUpElements : MonoBehaviour {
+public abstract class LegacyPowerUpElements : DestroyOnWall {
 
-	void OnTriggerEnter2D(Collider2D col)
+	protected override void OnTriggerEnter2D(Collider2D col)
 	{
 		if(col.gameObject.tag == "Player")
 		{
@@ -11,9 +11,7 @@ public abstract class LegacyPowerUpElements : MonoBehaviour {
 			ActiveCollisionPlayer(col.gameObject);
 		}
 
-		if(col.gameObject.tag == "Wall")
-			gameObject.SetActive(false);
-
+		base.OnTriggerEnter2D(col);
 	}
 
 	protected virtual void ActiveCollisionPlayer(GameObject player)

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EarthEffect : ActionElementalTap {
 
-	protected OrbMovement _orbMovement;
+	private OrbMovement _orbMovement;
 
 	protected override void ElementalTap()
 	{
