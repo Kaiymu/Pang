@@ -13,6 +13,7 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 
 	private int _numberLevelAccessible;
 	private int _level;
+	private int _gameLevel;
 	// Use this for initialization
 
 	public string additiveLevelToLoad
@@ -25,6 +26,12 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 	{
 		get{return _level;}
 		set{_level = value;}
+	}
+
+	public int gameLevel
+	{
+		get{return _gameLevel;}
+		set{_gameLevel = value;}
 	}
 
 	void Awake(){
@@ -75,6 +82,7 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 		if(_level == 3){
 			_temporaryLevelsList.Clear();
 			string o = GameObject.FindGameObjectWithTag("CurrentLevel").gameObject.name;
+			_gameLevel = int.Parse(o);
 		}
 	}
 
