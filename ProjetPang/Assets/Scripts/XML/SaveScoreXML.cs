@@ -33,6 +33,7 @@ public class SaveScoreXML : SingleBehaviour<SaveScoreXML> {
 		*/
 	}
 
+
 	string LoadXMLFile()
 	{
 		string dbPath = "";
@@ -61,17 +62,20 @@ public class SaveScoreXML : SingleBehaviour<SaveScoreXML> {
 		return dbPath;
 	}
 
+	void Update()
+	{
+		Debug.Log (ManagerLevels.instance.gameLevel);
+	}
 	void SaveScore()
 	{
-		Debug.Log ("toto");
-		int arrayXMLUpdateScoreLevels = ManagerLevels.instance.level - 3;
+		int arrayXMLUpdateScoreLevels = ManagerLevels.instance.gameLevel;
+		int indexScoreToPush = arrayXMLUpdateScoreLevels - 1;
 
-		if(memory.score[arrayXMLUpdateScoreLevels] < ManagerScore.instance.score)
-			memory.score[arrayXMLUpdateScoreLevels] = ManagerScore.instance.score;
+		if(memory.score[indexScoreToPush] < ManagerScore.instance.score)
+			memory.score[indexScoreToPush] = ManagerScore.instance.score;
 
 		memory.levels[arrayXMLUpdateScoreLevels] = arrayXMLUpdateScoreLevels + 1;
-
-		memory.Save(Application.dataPath + "/Save.xml");
+		memory.Save(LoadXMLFile());
 	}
 
 

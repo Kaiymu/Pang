@@ -168,7 +168,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 998150210}
   - 114: {fileID: 998150209}
-  - 114: {fileID: 998150211}
   m_Layer: 0
   m_Name: ManagerScore
   m_TagString: Untagged
@@ -200,6 +199,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+<<<<<<< HEAD
 --- !u!114 &998150211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f72231bf6aa3374782d1a619813a41c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> cfab6fb3497209ff1f5e5bc1a25c6cdd4e1761a3
 --- !u!1 &1369829066
 GameObject:
   m_ObjectHideFlags: 0
