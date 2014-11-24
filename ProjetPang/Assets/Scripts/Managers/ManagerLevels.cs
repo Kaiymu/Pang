@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ManagerLevels : SingleBehaviour<ManagerLevels> {
+public class ManagerLevels : MonoBehaviour {
 
 	public string ListLevelSceneName;
 
@@ -14,6 +14,8 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 	private int _numberLevelAccessible;
 	private int _level;
 	// Use this for initialization
+
+    public static ManagerLevels instance;
 
 	public string additiveLevelToLoad
 	{
@@ -28,7 +30,13 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 	}
 
 	void Awake(){
-		DontDestroyOnLoad (transform.gameObject);
+        if (instance)
+            Destroy(gameObject);
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
 	}
 
 	void OnEnable(){
