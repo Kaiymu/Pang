@@ -62,10 +62,6 @@ public class SaveScoreXML : SingleBehaviour<SaveScoreXML> {
 		return dbPath;
 	}
 
-	void Update()
-	{
-		Debug.Log (ManagerLevels.instance.gameLevel);
-	}
 	void SaveScore()
 	{
 		int arrayXMLUpdateScoreLevels = ManagerLevels.instance.gameLevel;

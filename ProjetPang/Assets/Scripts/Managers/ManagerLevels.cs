@@ -54,18 +54,28 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 	}
 
 	// Called in the list level, when the players push a buttons to go to the level
-	void GoToLevel(GameObject gameObjectLevel)
-	{
+	void GoToLevel(GameObject gameObjectLevel){
 		Time.timeScale = 1;
 		_additiveLevelToLoad = gameObjectLevel.name;
 		Application.LoadLevel("AdditifRegroupLevels");
 	}
 
-	void QuitGame()
-	{
-		Application.Quit();
+	void NextLevelMenu(){
+		Time.timeScale = 1;
+		_additiveLevelToLoad = (gameLevel+1) + "_Level";
+		Application.LoadLevel("AdditifRegroupLevels");
 	}
 
+	void ReloadCurrentLevel(){
+		Time.timeScale = 1;
+		_additiveLevelToLoad = (gameLevel) + "_Level";
+		Application.LoadLevel("AdditifRegroupLevels");
+	}
+
+	void QuitGame(){
+		Application.Quit();
+	}
+	
 	void OnLevelWasLoaded(int levelLoaded) {
 		//If the list levels is loaded, then we get all the levels container.
 		// I put the level in a private to access is asyncronosly in the LevelIsloaded
@@ -85,7 +95,7 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 			_gameLevel = int.Parse(o);
 		}
 	}
-
+	
 	// Loop throught the parents, to get all the childre, and put them in a array
 	void CreateTemporyArrayLevelsGameobjects()
 	{

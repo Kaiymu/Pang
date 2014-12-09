@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XMLScore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <score>
-    <int>0</int>
+    <int>600</int>
     <int>0</int>
     <int>0</int>
   </score>
   <levels>
     <int>1</int>
-    <int>0</int>
+    <int>2</int>
     <int>0</int>
   </levels>
 </XMLScore>

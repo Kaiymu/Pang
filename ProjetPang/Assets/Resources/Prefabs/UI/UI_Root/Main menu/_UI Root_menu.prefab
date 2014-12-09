@@ -25,6 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   - 114: {fileID: 11400016}
+  - 114: {fileID: 11400012}
   m_Layer: 15
   m_Name: Label
   m_TagString: Untagged
@@ -79,7 +80,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400012}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Main menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,6 +470,18 @@ MonoBehaviour:
   functionName: GoToListLevels
   trigger: 0
   includeChildren: 0
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: MainMenuStart
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -509,7 +522,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: Start game
+  mText: 
   mFontSize: 120
   mFontStyle: 0
   mAlignment: 0

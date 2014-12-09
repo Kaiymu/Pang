@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bouncinessY: 165
-  bouncinessX: 80
+  bouncinessX: 50
   startBouciness: 80
 --- !u!114 &11400002
 MonoBehaviour:

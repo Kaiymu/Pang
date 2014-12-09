@@ -29,5 +29,12 @@ public abstract class LegacyOrbMovement : MonoBehaviour {
 	public virtual void FloattingOrbs(GameObject orbToFloat)
 	{
 		orbToFloat.rigidbody2D.gravityScale = 0.3f;
+		StartCoroutine(BasicComportement(orbToFloat));
+	}
+
+	public virtual IEnumerator BasicComportement(GameObject orb)
+	{
+		yield return new WaitForSeconds(5f);
+		orb.rigidbody2D.gravityScale = 0.4f;
 	}
 }

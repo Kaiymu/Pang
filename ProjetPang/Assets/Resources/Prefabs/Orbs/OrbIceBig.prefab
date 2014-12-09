@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bouncinessY: 220
-  bouncinessX: 125
-  startBouciness: -125
+  bouncinessX: 75
+  startBouciness: -75
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

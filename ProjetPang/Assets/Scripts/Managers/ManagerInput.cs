@@ -7,8 +7,8 @@ public class ManagerInput : SingleBehaviour<ManagerInput> {
 
 	private bool touchingLeft, touchingRight, fire, changeArrowRight, changeArrowLeft, pausingGame, quittingGame, restartingLevel, goingNextLevel, goingMainMenu, goingListLevel, stopMovement;
 
-	void Awake()
-	{
+	public bool testLel = false;
+	void Awake(){
 		DontDestroyOnLoad (transform.gameObject);
 	}
 	void isTouchingLeft()
@@ -197,7 +197,7 @@ public class ManagerInput : SingleBehaviour<ManagerInput> {
 	public bool nextLevel()
 	{
 		if(goingNextLevel)
-		{	
+		{
 			goingNextLevel = false;
 			return true;
 		}

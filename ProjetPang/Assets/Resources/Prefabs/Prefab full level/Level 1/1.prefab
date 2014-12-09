@@ -70,7 +70,7 @@ GameObject:
   - 4: {fileID: 400008}
   m_Layer: 0
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: CurrentLevel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -815,7 +815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bouncinessY: 220
-  bouncinessX: 125
+  bouncinessX: 100
   startBouciness: -125
 --- !u!114 &11400016
 MonoBehaviour:
@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bouncinessY: 220
-  bouncinessX: 125
+  bouncinessX: 100
   startBouciness: -125
 --- !u!198 &19800000
 ParticleSystem:

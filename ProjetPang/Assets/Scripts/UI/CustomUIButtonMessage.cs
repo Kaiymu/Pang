@@ -85,6 +85,7 @@ public class CustomUIButtonMessage : MonoBehaviour
 		}
 		else
 		{
+			Debug.Log (GameObject.FindGameObjectWithTag(targetTagName.ToString()));
 			target.SendMessage(functionName, gameObject, SendMessageOptions.DontRequireReceiver);
 		}
 	}
