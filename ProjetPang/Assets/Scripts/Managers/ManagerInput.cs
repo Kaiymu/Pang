@@ -7,10 +7,18 @@ public class ManagerInput : SingleBehaviour<ManagerInput> {
 
 	private bool touchingLeft, touchingRight, fire, changeArrowRight, changeArrowLeft, pausingGame, quittingGame, restartingLevel, goingNextLevel, goingMainMenu, goingListLevel, stopMovement;
 
-	public bool testLel = false;
+	public static ManagerInput instance;
+
 	void Awake(){
-		DontDestroyOnLoad (transform.gameObject);
+		if(instance)
+			Destroy (gameObject);
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad (gameObject);
+		}
 	}
+
 	void isTouchingLeft()
 	{
 		touchingLeft = true;

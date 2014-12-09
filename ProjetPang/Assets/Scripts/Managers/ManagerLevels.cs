@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ManagerLevels : SingleBehaviour<ManagerLevels> {
+public class ManagerLevels : MonoBehaviour {
 
 	public string ListLevelSceneName;
 
@@ -15,6 +15,8 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 	private int _level;
 	private int _gameLevel;
 	// Use this for initialization
+
+    public static ManagerLevels instance;
 
 	public string additiveLevelToLoad
 	{
@@ -35,7 +37,13 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 	}
 
 	void Awake(){
-		DontDestroyOnLoad (transform.gameObject);
+        if (instance)
+            Destroy(gameObject);
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
 	}
 
 	void OnEnable(){
@@ -80,16 +88,17 @@ public class ManagerLevels : SingleBehaviour<ManagerLevels> {
 		//If the list levels is loaded, then we get all the levels container.
 		// I put the level in a private to access is asyncronosly in the LevelIsloaded
 		level = levelLoaded;
-		if (level == 2)
+		if (level == 1)
 		{
 			_retrieveAllLevels = GameObject.FindGameObjectsWithTag("ListLevels");
+			Debug.Log (_retrieveAllLevels);
 			CreateTemporyArrayLevelsGameobjects();
 		}
 	}
 
 	void LevelIsLoaded()
 	{
-		if(_level == 3){
+		if(_level == 2){
 			_temporaryLevelsList.Clear();
 			string o = GameObject.FindGameObjectWithTag("CurrentLevel").gameObject.name;
 			_gameLevel = int.Parse(o);
