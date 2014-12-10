@@ -21,9 +21,9 @@ public class ManagerScore : SingleBehaviour<ManagerScore> {
 		set{_combo = value;}
 	}
 
-	public void Combo()
+	public void Combo(int comboValue)
 	{
-		combo++;
+		combo += comboValue;
 		CancelInvoke();
 		Invoke ("ResetCombo", 1);
 	}

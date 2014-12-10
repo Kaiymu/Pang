@@ -9,14 +9,13 @@ using System.Collections.Generic;
 public class ManagerTouchTap : MonoBehaviour {
 
 	public float radiusTap;
-
+	public int timeStopPause = 0;
+	
 	private Vector3 _pos;
 	private RaycastHit2D[] _hit;
 
 	private int timeMoving = 0;
 	private bool _pauseToTap = false;
-	public int timeStopPause = 0;
-
 	private List<GameObject> _listOrbTaped = new List<GameObject>();
 	
 	public List<GameObject> listOrbTaped
@@ -68,7 +67,7 @@ public class ManagerTouchTap : MonoBehaviour {
 
 		for(int i = 0; i < _hit.Length; i++)
 		{
-			if(_hit[i].collider.tag == "OrbIce" || _hit[i].collider.tag == "OrbDarkness" || _hit[i].collider.tag == "OrbMalusTaped"){
+			if(_hit[i].collider.tag == "OrbIce" || _hit[i].collider.tag == "OrbMalusTaped"){
 				if(!listOrbTaped.Contains(_hit[i].collider.gameObject))
 				{
 					_hit[i].collider.renderer.material.color = Color.red;
@@ -86,7 +85,10 @@ public class ManagerTouchTap : MonoBehaviour {
 			for(int i = 0; i < listOrbTaped.Count; i++)
 			{
 				if(listOrbTaped[i].activeInHierarchy)
-					ManagerOrb.instance.AffectOrb(listOrbTaped[i]);
+					if(listOrbTaped[i].tag == "OrbMalusTaped")
+						ManagerOrb.instance.CreateSmallerOrb(listOrbTaped[i]);
+					else
+						ManagerOrb.instance.AffectOrb(listOrbTaped[i]);
 			}
 			listOrbTaped.Clear();
 		}

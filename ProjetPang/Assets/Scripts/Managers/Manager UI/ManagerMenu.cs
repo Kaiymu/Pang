@@ -15,7 +15,6 @@ public class ManagerMenu : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.Log (Time.timeScale);
 		PausingGame();
 	}
 

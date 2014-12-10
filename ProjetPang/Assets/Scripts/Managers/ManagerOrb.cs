@@ -47,11 +47,23 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 	void LevelIsLoaded()
 	{
 		GameObject[] g = GameObject.FindGameObjectsWithTag("OrbIce");
+        GameObject[] gMalus = GameObject.FindGameObjectsWithTag("OrbIce");
 
-		foreach(GameObject orb in g)
-		{
-			listOrbInGame.Add(orb);
-		}
+        if (g != null)
+        {
+            foreach (GameObject orb in g)
+            {
+                listOrbInGame.Add(orb);
+            }
+        }
+
+        if (gMalus != null)
+        {
+            foreach (GameObject orb in gMalus)
+            {
+                listOrbInGame.Add(orb);
+            }
+        }
 	}
 
 	void Start()

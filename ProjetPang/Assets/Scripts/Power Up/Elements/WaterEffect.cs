@@ -7,13 +7,20 @@ public class WaterEffect : ActionElementalTap {
 
 	protected override void OnEnable()
 	{
-		_player = GameObject.FindGameObjectWithTag("Player");
 		base.OnEnable();
 	}
 
 	protected override void ElementalTap()
 	{
-		_player.GetComponent<PlayerMovement>().speed += 1;
+		this.renderer.material.color = Color.blue;
+		this.GetComponent<OrbScore>().WaterEffect();
+		Invoke ("ResetNormal", 5);
+	}
+
+	protected override void ResetNormal()
+	{
+		this.renderer.material.color = _colorBase;
+		this.GetComponent<OrbScore>().NormalEffect();
 		Destroy(GetComponent<WaterEffect>());
 	}
 }
