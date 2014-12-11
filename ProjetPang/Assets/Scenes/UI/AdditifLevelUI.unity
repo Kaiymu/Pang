@@ -416,7 +416,7 @@ Transform:
   m_PrefabInternal: {fileID: 1636415673}
   m_GameObject: {fileID: 129748186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 585.844666, y: 362.350708, z: -8.34465027e-05}
+  m_LocalPosition: {x: 583.72113, y: 362.350708, z: -.016772747}
   m_LocalScale: {x: 1.25, y: 1.25, z: .486111134}
   m_Children:
   - {fileID: 1645007458}
@@ -1237,7 +1237,7 @@ Transform:
   m_PrefabInternal: {fileID: 1636415673}
   m_GameObject: {fileID: 421828866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.6402988, y: -21.3616829, z: -8.34465027e-05}
+  m_LocalPosition: {x: -30.9279251, y: -22.6493073, z: -.015103817}
   m_LocalScale: {x: 1.25, y: 1.25, z: .486111134}
   m_Children:
   - {fileID: 705120712}
@@ -2066,7 +2066,7 @@ Transform:
   m_PrefabInternal: {fileID: 1636415673}
   m_GameObject: {fileID: 814496479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 536.914978, y: -392.197815, z: -.0204443932}
+  m_LocalPosition: {x: 533.063293, y: -390.763367, z: -.0373005867}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 1361837473}
@@ -3186,7 +3186,7 @@ Transform:
   m_PrefabInternal: {fileID: 1636415673}
   m_GameObject: {fileID: 1193005089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.9280605, y: -7.07000017, z: 0}
+  m_LocalPosition: {x: -10.8784208, y: -7.07000017, z: 0}
   m_LocalScale: {x: 1.79999995, y: 1.79999995, z: 1}
   m_Children:
   - {fileID: 783965680}
@@ -3371,7 +3371,7 @@ Transform:
   m_PrefabInternal: {fileID: 1636415673}
   m_GameObject: {fileID: 1376817529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -598.770813, y: -392.197815, z: -.0354647636}
+  m_LocalPosition: {x: -594.919128, y: -390.763367, z: -.0514864922}
   m_LocalScale: {x: 1.5, y: 1.5, z: .486111134}
   m_Children:
   - {fileID: 503972805}
@@ -3531,6 +3531,7 @@ GameObject:
   - 20: {fileID: 1407265366}
   - 114: {fileID: 1407265368}
   - 92: {fileID: 1407265367}
+  - 81: {fileID: 1407265369}
   m_Layer: 15
   m_Name: _Main Camera
   m_TagString: MainCamera
@@ -3627,6 +3628,13 @@ MonoBehaviour:
   submitKey1: 330
   cancelKey0: 27
   cancelKey1: 331
+--- !u!81 &1407265369
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1407265364}
+  m_Enabled: 1
 --- !u!1 &1441325963
 GameObject:
   m_ObjectHideFlags: 0
@@ -4051,6 +4059,78 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400088, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 583.72113
+      objectReference: {fileID: 0}
+    - target: {fileID: 400100, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -30.9279251
+      objectReference: {fileID: 0}
+    - target: {fileID: 400100, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -22.6493073
+      objectReference: {fileID: 0}
+    - target: {fileID: 400098, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 533.063293
+      objectReference: {fileID: 0}
+    - target: {fileID: 400098, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -390.763367
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -594.919128
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -390.763367
+      objectReference: {fileID: 0}
+    - target: {fileID: 400066, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -10.8784208
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400022, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: scalingStyle
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400088, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 362.350708
+      objectReference: {fileID: 0}
+    - target: {fileID: 400088, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.016772747
+      objectReference: {fileID: 0}
+    - target: {fileID: 400098, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.0373005867
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.0514864922
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .00571428565
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .00571428565
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .00571428565
+      objectReference: {fileID: 0}
+    - target: {fileID: 400100, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.015103817
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400022, guid: cd1c2de3c5d35884bb6453ed447eba28, type: 2}
+      propertyPath: adjustByDPI
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4603,7 +4683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5ecb5660b11414fb042fb826e03b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scalingStyle: 1
+  scalingStyle: 2
   manualHeight: 350
   minimumHeight: 320
   maximumHeight: 1536

@@ -18,6 +18,8 @@ public class ManagerLevels : MonoBehaviour {
 
     public static ManagerLevels instance;
 
+	public bool mainThemeSound = true;
+
 	public string additiveLevelToLoad
 	{
 		get{return _additiveLevelToLoad;}
@@ -91,7 +93,6 @@ public class ManagerLevels : MonoBehaviour {
 		if (level == 1)
 		{
 			_retrieveAllLevels = GameObject.FindGameObjectsWithTag("ListLevels");
-			Debug.Log (_retrieveAllLevels);
 			CreateTemporyArrayLevelsGameobjects();
 		}
 	}
