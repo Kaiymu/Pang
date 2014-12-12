@@ -1,12 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ManagerScore : SingleBehaviour<ManagerScore> {
+public class ManagerScore : MonoBehaviour {
 		
 	private int _score;
 	private int _combo;
 
 	private bool _inCombo;
+
+	public static ManagerScore instance;
+
+	void Awake(){
+		Debug.Log (instance);
+		if(instance)
+			Destroy (gameObject);
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad (gameObject);
+		}
+	}
 	
 	public int score 
 	{

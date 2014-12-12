@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ManagerOrb : SingleBehaviour<ManagerOrb> {
+public class ManagerOrb : MonoBehaviour {
 
 	// Gère la pool d'orb
 	public float numberOrbs;
@@ -17,6 +17,18 @@ public class ManagerOrb : SingleBehaviour<ManagerOrb> {
 	private GameObject _orbsRessourcesContainer;
 
 	private int _IDGroupOrb;
+
+	public static ManagerOrb instance;
+
+	void Awake(){
+		if(instance)
+			Destroy (gameObject);
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad (gameObject);
+		}
+	}
 
 	public List<GameObject> listOrb
 	{

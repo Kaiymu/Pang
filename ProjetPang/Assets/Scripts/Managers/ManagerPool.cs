@@ -2,8 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ManagerPool : SingleBehaviour<ManagerPool> {
+public class ManagerPool : MonoBehaviour {
 
+	public static ManagerPool instance;
+
+	void Awake(){
+		if(instance)
+			Destroy (gameObject);
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad (gameObject);
+		}
+	}
+	
 	public int countActiveInHiearchy(List<GameObject> listToCount)
 	{
 		int numberActiveHiearchy = 0;

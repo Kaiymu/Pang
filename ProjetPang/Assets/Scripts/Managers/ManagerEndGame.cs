@@ -1,13 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ManagerEndGame : SingleBehaviour<ManagerEndGame> {
+public class ManagerEndGame : MonoBehaviour {
 
 	private bool _isLevelLoaded;
 	private ManagerOrb _managerOrb;
 	private ManagerPool _managerPool;
 	public delegate void EndGame();
 	public static event EndGame OnEndGame;
+
+	public static ManagerEndGame instance;
+
+	void Awake(){
+		if(instance)
+			Destroy (gameObject);
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad (gameObject);
+		}
+	}
 
 	void OnEnable()
 	{

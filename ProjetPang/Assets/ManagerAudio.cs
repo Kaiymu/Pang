@@ -4,6 +4,7 @@ using System.Collections;
 public class ManagerAudio : MonoBehaviour {
 
 	private static ManagerAudio instance;
+
 	private AudioSource[] _audioSources;
 	private bool _playMainSound = true;
 	private bool _playBattleSound = false;

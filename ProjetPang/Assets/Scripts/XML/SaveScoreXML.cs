@@ -3,7 +3,7 @@ using System.Collections;
 using System.IO;
 using System.Xml;
 
-public class SaveScoreXML : SingleBehaviour<SaveScoreXML> {
+public class SaveScoreXML : MonoBehaviour {
 
 	private XMLScore _memory;
 	private  WWW www;
@@ -12,7 +12,8 @@ public class SaveScoreXML : SingleBehaviour<SaveScoreXML> {
 		get{return _memory;}
 		set{_memory = value;}
 	}
-
+		
+	public static SaveScoreXML instance;
 	void OnEnable()
 	{
 		ManagerEndGame.OnEndGame += SaveScore;
@@ -20,7 +21,14 @@ public class SaveScoreXML : SingleBehaviour<SaveScoreXML> {
 
 	void Awake()
 	{
-		DontDestroyOnLoad (transform.gameObject);
+		if(instance)
+			Destroy (gameObject);
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad (gameObject);
+		}
+
 		memory = XMLScore.Load(LoadXMLFile());
 
 		/*

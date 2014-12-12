@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ManagerPowerUp : SingleBehaviour<ManagerPowerUp> {
+public class ManagerPowerUp : MonoBehaviour {
 
 	public float speed;
 	public int ammountPooledObject;
@@ -16,6 +16,18 @@ public class ManagerPowerUp : SingleBehaviour<ManagerPowerUp> {
 	
 	private float _randomNumber;
 
+	public static ManagerPowerUp instance;
+
+	void Awake(){
+		if(instance)
+			Destroy (gameObject);
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad (gameObject);
+		}
+	}
+	
 	public List<GameObject> listPowerUp
 	{
 		get {return _listPowerUp;} 

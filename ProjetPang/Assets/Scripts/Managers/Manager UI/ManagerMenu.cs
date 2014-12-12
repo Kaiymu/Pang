@@ -9,6 +9,18 @@ public class ManagerMenu : MonoBehaviour {
 
 	//private GiveAllObjectsToManagers _giveAllObjectsToManagers;
 	private ManagerInput _managerInput;
+
+	public static ManagerMenu instance;
+
+	void Awake(){
+		if(instance)
+			Destroy (gameObject);
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad (gameObject);
+		}
+	}
 	
 	void OnEnable(){
 		ManagerEndGame.OnEndGame += EndGameMenu;

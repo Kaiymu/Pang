@@ -17,13 +17,25 @@ public class ManagerTouchTap : MonoBehaviour {
 	private int timeMoving = 0;
 	private bool _pauseToTap = false;
 	private List<GameObject> _listOrbTaped = new List<GameObject>();
-	
+
+	public static ManagerTouchTap instance;
+
 	public List<GameObject> listOrbTaped
 	{
 		get {return _listOrbTaped;} 
 		set {
 			if(value != null)
 				_listOrbTaped = value;
+		}
+	}
+
+	void Awake(){
+		if(instance)
+			Destroy (gameObject);
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad (gameObject);
 		}
 	}
 
