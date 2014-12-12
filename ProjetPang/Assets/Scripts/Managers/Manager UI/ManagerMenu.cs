@@ -39,8 +39,10 @@ public class ManagerMenu : MonoBehaviour {
 		Time.timeScale = pauseGame;
 		for(int i = 0; i < arrayToLoop.transform.childCount; i++)
 		{
-			if(!arrayToLoop.transform.GetChild(i).gameObject.activeInHierarchy)
-				arrayToLoop.transform.GetChild(i).gameObject.SetActive(display);	
+			if(display && arrayToLoop.transform.GetChild(i).gameObject.activeInHierarchy)
+				arrayToLoop.transform.GetChild(i).gameObject.SetActive(display);
+			else
+				arrayToLoop.transform.GetChild(i).gameObject.SetActive(display);
 		}
 	}
 }
