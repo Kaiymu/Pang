@@ -5,7 +5,7 @@ public abstract class RetrieveInfosLegacy : MonoBehaviour {
 	
 	protected UILabel _infoLabel;
 	
-	void Start () {
+	protected virtual void Start () {
 		_infoLabel = this.GetComponent<UILabel>();
 	}
 	

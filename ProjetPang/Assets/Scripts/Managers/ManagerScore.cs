@@ -11,7 +11,6 @@ public class ManagerScore : MonoBehaviour {
 	public static ManagerScore instance;
 
 	void Awake(){
-		Debug.Log (instance);
 		if(instance)
 			Destroy (gameObject);
 		else
