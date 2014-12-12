@@ -12,6 +12,15 @@ public class ManagerMenu : MonoBehaviour {
 
 	public static ManagerMenu instance;
 
+	private UISlider _numberSlider;
+	private float _stamina = 0;
+	
+	public float stamina { 
+		get { return _stamina; }
+		set { _stamina = value;}
+	}
+
+
 	void Awake(){
 		if(instance)
 			Destroy (gameObject);
@@ -23,7 +32,12 @@ public class ManagerMenu : MonoBehaviour {
 	}
 	
 	void OnEnable(){
+		LegacyOrbCollider.OnDestroy += UpdateStamina;
 		ManagerEndGame.OnEndGame += EndGameMenu;
+	}
+
+	void UpdateStamina(float staminaValue) {
+		_stamina += staminaValue;
 	}
 
 	void Update () {

@@ -19,7 +19,7 @@ public class ManagerTouchTap : MonoBehaviour {
 	private List<GameObject> _listOrbTaped = new List<GameObject>();
 
 	public static ManagerTouchTap instance;
-
+	private ManagerMenu staminaLevel;
 	public List<GameObject> listOrbTaped
 	{
 		get {return _listOrbTaped;} 
@@ -40,22 +40,27 @@ public class ManagerTouchTap : MonoBehaviour {
 	}
 
 	void Update () {
-
 		PausingToTap();
 
 		if(_pauseToTap)
 			Touching2DElements();
 		else
 			ActionOnTapedObject();
+
+		if(staminaLevel == null)
+			staminaLevel = ManagerMenu.instance;
 	
 	}
 
 	// Stop the time for an amount of frame (Can't use time property because the time.scale is at 0).
 	void PausingToTap()
 	{
-		if(ManagerInput.instance.stopingMovement() && !_pauseToTap){
-			_pauseToTap = true;
-			Time.timeScale = 0;
+		if(staminaLevel != null) {
+			if(ManagerInput.instance.stopingMovement() && !_pauseToTap && staminaLevel.stamina >= 1){
+				staminaLevel.stamina = 0;
+				_pauseToTap = true;
+				Time.timeScale = 0;
+			}
 		}
 
 		if(Time.timeScale == 0 && _pauseToTap)

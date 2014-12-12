@@ -7,6 +7,10 @@ public abstract class LegacyOrbCollider : MonoBehaviour {
 	public bool canInvokeSmallerOrb = true;
 	public Color colorBase;
 
+	public delegate void OnDestroyOrb(float staminaValue);
+	public static event OnDestroyOrb OnDestroy;
+
+
 	protected virtual void OnEnable()
 	{
 		_orbMovement = GetComponent<OrbMovement>();
@@ -47,9 +51,10 @@ public abstract class LegacyOrbCollider : MonoBehaviour {
 	{
 		if(canInvokeSmallerOrb)
 			ManagerOrb.instance.CreateSmallerOrb(toDestroy);
-		RemoveComponent(toDestroy);
-		GetScore(toDestroy);
 
+		RemoveComponent(toDestroy);
+		IncreseStamina(toDestroy);
+		GetScore(toDestroy);
 		toDestroy.SetActive(false);
 
 		if(collided != null)
@@ -69,9 +74,36 @@ public abstract class LegacyOrbCollider : MonoBehaviour {
 		if(toRemove.GetComponent<WindEffect>() != null)
 			Destroy(toRemove.GetComponent<WindEffect>());
 	}
+
 	private void GetScore(GameObject toScore)
 	{
 		ManagerScore.instance.score = toScore.GetComponent<OrbScore>().score;
 		ManagerScore.instance.Combo(toScore.GetComponent<OrbScore>().combo);
+	}
+
+	private void IncreseStamina(GameObject sizeOrb) {
+		OrbSize.Size sizeCurrentOrb = sizeOrb.GetComponent<OrbSize>().sizeOrb;
+		float staminaValue = 0f;
+
+		switch(sizeCurrentOrb)
+		{
+			case OrbSize.Size.bigSize :
+				staminaValue = 0.15f;
+			break;
+
+			case OrbSize.Size.midSize :
+				staminaValue = 0.12f;
+			break;
+
+			case OrbSize.Size.normalSize :
+				staminaValue = 0.07f;
+			break;
+
+			case OrbSize.Size.smallSize :
+				staminaValue = 0.05f;
+			break;
+		}
+
+		OnDestroy(staminaValue);
 	}
 }
