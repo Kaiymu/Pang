@@ -27,7 +27,6 @@ public class OrbScore : MonoBehaviour {
 	}
 	public void WaterEffect()
 	{
-		Debug.Log ("toto");
 		_score = 20;
 		_combo = 2;
 	}

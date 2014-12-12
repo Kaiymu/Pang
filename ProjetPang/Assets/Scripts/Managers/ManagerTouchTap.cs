@@ -70,7 +70,7 @@ public class ManagerTouchTap : MonoBehaviour {
 			if(_hit[i].collider.tag == "OrbIce" || _hit[i].collider.tag == "OrbMalusTaped"){
 				if(!listOrbTaped.Contains(_hit[i].collider.gameObject))
 				{
-					_hit[i].collider.renderer.material.color = Color.red;
+					_hit[i].collider.renderer.material.color = ChangeSpriteColor();
 					listOrbTaped.Add(_hit[i].collider.gameObject);
 				}
 			}
@@ -92,5 +92,28 @@ public class ManagerTouchTap : MonoBehaviour {
 			}
 			listOrbTaped.Clear();
 		}
+	}
+
+	Color ChangeSpriteColor()
+	{
+		switch(ManagerElements.instance.currentElement)
+		{
+			case ManagerElements.Elements.Fire: 
+				return Color.red;
+			break;
+
+			case ManagerElements.Elements.Water:
+				return Color.blue;
+			break;
+
+			case ManagerElements.Elements.Earth:
+				return Color.green;
+			break;
+
+			case ManagerElements.Elements.Wind:
+				return Color.cyan;
+			break;
+		}
+		return Color.red;
 	}
 }

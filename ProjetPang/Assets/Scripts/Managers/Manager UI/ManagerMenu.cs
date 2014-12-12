@@ -36,11 +36,11 @@ public class ManagerMenu : MonoBehaviour {
 	}
 
 	void DisplayElementToShow(GameObject arrayToLoop, bool display, int pauseGame){
-
 		Time.timeScale = pauseGame;
 		for(int i = 0; i < arrayToLoop.transform.childCount; i++)
 		{
-			arrayToLoop.transform.GetChild(i).gameObject.SetActive(display);	
+			if(!arrayToLoop.transform.GetChild(i).gameObject.activeInHierarchy)
+				arrayToLoop.transform.GetChild(i).gameObject.SetActive(display);	
 		}
 	}
 }
