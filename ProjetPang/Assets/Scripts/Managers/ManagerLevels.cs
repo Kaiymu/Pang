@@ -103,9 +103,16 @@ public class ManagerLevels : MonoBehaviour {
 		Time.timeScale = 1;
 		if(_level == 2){
 			_temporaryLevelsList.Clear();
+			test();
 			string o = GameObject.FindGameObjectWithTag("CurrentLevel").gameObject.name;
 			_gameLevel = int.Parse(o);
 		}
+	}
+
+	void test()
+	{
+		// Coder ici la method qui permet d'arreter pendant X secondes la carte, et après de lancer le jeu. 
+		Debug.Log ("callme");
 	}
 	
 	// Loop throught the parents, to get all the childre, and put them in a array

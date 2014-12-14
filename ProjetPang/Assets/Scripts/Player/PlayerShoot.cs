@@ -63,7 +63,7 @@ public class PlayerShoot : MonoBehaviour {
 			{
 				if(!_arrows[i].activeInHierarchy && _arrows[i].tag == "ArrowNormal")
 				{
-					_arrows[i].transform.position = transform.position;
+					_arrows[i].transform.position = new Vector3(transform.position.x, transform.position.y - 3f, transform.position.z);
 					_arrows[i].GetComponent<ArrowMovement>().speed = speed;
 					_arrows[i].SetActive(true);
 					break;

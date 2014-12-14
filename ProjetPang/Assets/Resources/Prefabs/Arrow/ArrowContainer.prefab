@@ -8,10 +8,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400002}
   - 50: {fileID: 5000000}
   - 212: {fileID: 21200000}
   - 61: {fileID: 6100000}
+  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   m_Layer: 8
   m_Name: ArrowNormal
@@ -84,7 +84,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: .319999993, y: .319999963}
+  m_Size: {x: .319999993, y: 8.11999989}
   m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -128,7 +128,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 02f232bea82fdef469f3ba9747962fd3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 680c2f5e79b14994abd1f53c91bfebf0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
