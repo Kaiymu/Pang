@@ -8,8 +8,11 @@ public class ManagerEndGame : MonoBehaviour {
 	private ManagerPool _managerPool;
 	public delegate void EndGame();
 	public static event EndGame OnEndGame;
+	public static event EndGame OnGameOver;
 
 	public static ManagerEndGame instance;
+
+	private PlayerLife player;
 
 	void Awake(){
 		if(instance)
@@ -31,6 +34,7 @@ public class ManagerEndGame : MonoBehaviour {
 		_isLevelLoaded = true;
 		_managerOrb = ManagerOrb.instance;
 		_managerPool = ManagerPool.instance;
+		player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
 	}
 
 	void Update()
@@ -39,6 +43,9 @@ public class ManagerEndGame : MonoBehaviour {
 		{
 			if(_managerPool.countActiveInHiearchy(_managerOrb.listOrb) == 0 && _managerPool.countActiveInHiearchy(_managerOrb.listOrbInGame) == 0)
 				OnEndGame();
+
+			if(player.playerDead)
+				OnGameOver();
 		}
 	}
 }

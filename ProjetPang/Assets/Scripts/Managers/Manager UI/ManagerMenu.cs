@@ -34,6 +34,13 @@ public class ManagerMenu : MonoBehaviour {
 	void OnEnable(){
 		LegacyOrbCollider.OnDestroy += UpdateStamina;
 		ManagerEndGame.OnEndGame += EndGameMenu;
+		ManagerEndGame.OnGameOver += GameOver;
+	}
+
+	void OnDisable(){
+		LegacyOrbCollider.OnDestroy -= UpdateStamina;
+		ManagerEndGame.OnEndGame -= EndGameMenu;
+		ManagerEndGame.OnGameOver -= GameOver;
 	}
 
 	void UpdateStamina(float staminaValue) {
@@ -59,6 +66,11 @@ public class ManagerMenu : MonoBehaviour {
 	void EndGameMenu(){
 		DisplayElementToShow(_elementMenuToShow, false, 0);
 		DisplayElementToShow(_elementWinToShow, true, 0);
+	}
+
+	void GameOver(){
+		DisplayElementToShow(_elementMenuToShow, false, 0);
+		DisplayElementToShow(_elementGameOverToShow, true, 0);
 	}
 
 	void DisplayElementToShow(GameObject arrayToLoop, bool display, int pauseGame){

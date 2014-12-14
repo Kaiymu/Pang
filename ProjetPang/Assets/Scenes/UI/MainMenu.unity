@@ -1365,6 +1365,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: bace8422906dad248afafa66a8707216, type: 2}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bace8422906dad248afafa66a8707216, type: 2}
   m_RootGameObject: {fileID: 2094569949}

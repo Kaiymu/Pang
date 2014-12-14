@@ -90,7 +90,6 @@ public class ManagerLevels : MonoBehaviour {
 		//If the list levels is loaded, then we get all the levels container.
 		// I put the level in a private to access is asyncronosly in the LevelIsloaded
 		level = levelLoaded;
-		Time.timeScale = 1;
 		if (level == 1)
 		{
 			_retrieveAllLevels = GameObject.FindGameObjectsWithTag("ListLevels");
@@ -100,21 +99,13 @@ public class ManagerLevels : MonoBehaviour {
 
 	void LevelIsLoaded()
 	{
-		Time.timeScale = 1;
 		if(_level == 2){
 			_temporaryLevelsList.Clear();
-			test();
 			string o = GameObject.FindGameObjectWithTag("CurrentLevel").gameObject.name;
 			_gameLevel = int.Parse(o);
 		}
 	}
 
-	void test()
-	{
-		// Coder ici la method qui permet d'arreter pendant X secondes la carte, et après de lancer le jeu. 
-		Debug.Log ("callme");
-	}
-	
 	// Loop throught the parents, to get all the childre, and put them in a array
 	void CreateTemporyArrayLevelsGameobjects()
 	{
