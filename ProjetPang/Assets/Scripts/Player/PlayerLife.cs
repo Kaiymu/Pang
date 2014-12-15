@@ -5,9 +5,9 @@ public class PlayerLife : MonoBehaviour {
 
 	public bool playerDead = false;
 
-	void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
 	{
-		if(col.tag == "OrbIce" || col.tag == "OrbMalusTaped")
+        if (col.gameObject.tag == "OrbIce" || col.gameObject.tag == "OrbMalusTaped")
 		{
 			playerDead = true;
 		}

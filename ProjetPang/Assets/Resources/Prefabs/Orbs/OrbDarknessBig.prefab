@@ -16,12 +16,12 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400006}
   m_Layer: 12
-  m_Name: OrbDarkness
+  m_Name: OrbDarknessBig
   m_TagString: OrbMalusTaped
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 1
@@ -281,8 +281,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bouncinessY: 250
-  bouncinessX: 80
-  startBouciness: -80
+  bouncinessX: 125
+  startBouciness: 125
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,6 +294,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5376114d3b5925f45a2f52cb097636f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInvokeSmallerOrb: 0
+  colorBase: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -356,6 +358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5376114d3b5925f45a2f52cb097636f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInvokeSmallerOrb: 1
+  colorBase: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1

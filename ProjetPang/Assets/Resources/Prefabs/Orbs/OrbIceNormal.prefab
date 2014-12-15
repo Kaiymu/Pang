@@ -22,7 +22,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92307b558909b043b0834642bcc8db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bouncinessY: 165
+  bouncinessY: 190
   bouncinessX: 50
   startBouciness: 80
 --- !u!114 &11400002
@@ -156,6 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5376114d3b5925f45a2f52cb097636f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInvokeSmallerOrb: 1
+  colorBase: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

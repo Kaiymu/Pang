@@ -660,6 +660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5376114d3b5925f45a2f52cb097636f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInvokeSmallerOrb: 1
+  colorBase: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -723,6 +725,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5376114d3b5925f45a2f52cb097636f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInvokeSmallerOrb: 1
+  colorBase: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -760,6 +764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5376114d3b5925f45a2f52cb097636f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInvokeSmallerOrb: 1
+  colorBase: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -797,6 +803,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5376114d3b5925f45a2f52cb097636f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInvokeSmallerOrb: 1
+  colorBase: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -808,6 +816,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5376114d3b5925f45a2f52cb097636f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInvokeSmallerOrb: 1
+  colorBase: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1
