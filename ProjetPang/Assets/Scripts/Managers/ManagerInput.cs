@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ManagerInput : SingleBehaviour<ManagerInput> {
+public class ManagerInput : MonoBehaviour {
 	
 	// Keep all the gesture of the game. Really easy if i want to add other key, or a pad for exemple.
 
